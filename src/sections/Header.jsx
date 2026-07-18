@@ -29,12 +29,12 @@ const Header = () => {
     <header className={`header ${isScrolled || activeMenu ? 'solid' : 'transparent'}`} onMouseLeave={handleMenuLeave}>
       <div className="container header-container">
         
-        {/* Logo Image */}
+        {/* Logo Image (Increased height for better legibility) */}
         <Link to="/" className="header-logo">
           <img 
             src={isScrolled || activeMenu ? logoBlue : logoWhite} 
             alt="مرماز أكاديمي" 
-            style={{ height: '40px', objectFit: 'contain' }}
+            style={{ height: '58px', objectFit: 'contain' }}
           />
         </Link>
 

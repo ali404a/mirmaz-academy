@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FadeIn } from '../components/MotionWrapper';
-import Card from '../components/Card';
 import Button from '../components/Button';
 import { Star, ChevronRight, ChevronLeft, ArrowLeft } from 'lucide-react';
 
@@ -59,10 +58,10 @@ const Teachers = () => {
       <div className="container">
         
         <FadeIn>
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex justify-between items-end mb-16">
             <div>
               <span className="text-secondary font-bold mb-2 block text-sm uppercase tracking-wider">نخبة العراق</span>
-              <h2 className="section-title mb-0">أساتذة مرماز</h2>
+              <h2 className="section-title mb-0">أساتذة مرماز الأكاديميون</h2>
             </div>
             <div className="hidden md:flex gap-4">
               <button onClick={prevSlide} className="w-12 h-12 rounded-full bg-surface flex items-center justify-center shadow-sm hover:bg-primary hover:text-white transition-colors" aria-label="السابق">
@@ -81,34 +80,35 @@ const Teachers = () => {
             style={{ transform: `translateX(${activeIndex * 100}%)` }}
           >
             {teachers.map((teacher) => (
-              <Card 
-                key={teacher.id} 
-                className="teacher-item p-0 border-none bg-background/50 flex flex-col"
-                hover={true}
-              >
-                <div className="h-64 overflow-hidden relative">
-                  <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-amber-500 flex items-center gap-1 shadow-sm">
-                    {teacher.rating} <Star size={12} fill="currentColor"/>
-                  </div>
-                  <img src={teacher.image} alt={teacher.name} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div className="p-6 text-center flex-grow flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-lg font-bold mb-1 text-primary">{teacher.name}</h3>
-                    <p className="text-secondary text-sm font-bold mb-4">{teacher.subject}</p>
-                    
-                    <div className="flex justify-center gap-3 text-xs font-medium text-gray-500 mb-6">
-                      <span>{teacher.exp}</span>
-                      <span className="w-1 h-1 rounded-full bg-gray-300 self-center"></span>
-                      <span>{teacher.students}</span>
-                    </div>
+              <div key={teacher.id} className="teacher-item">
+                <div className="premium-teacher-card">
+                  
+                  {/* Circular Avatar wrapper */}
+                  <div className="teacher-avatar-wrapper">
+                    <img src={teacher.image} alt={teacher.name} className="teacher-avatar" />
                   </div>
 
-                  <Button variant="outline" className="w-full text-sm" icon={<ArrowLeft size={16}/>}>
+                  {/* Profile info */}
+                  <div>
+                    <span className="teacher-tag">{teacher.subject}</span>
+                    <h3 className="text-xl font-bold mb-2 text-gray-800">{teacher.name}</h3>
+                    
+                    <div className="flex items-center justify-center gap-1 text-sm font-bold text-amber-500 mb-4">
+                      <Star size={14} fill="currentColor" />
+                      <span>{teacher.rating} تقييم</span>
+                    </div>
+
+                    <p className="text-xs text-gray-500 font-medium">
+                      {teacher.exp} • {teacher.students}
+                    </p>
+                  </div>
+
+                  <Button variant="outline" className="w-full mt-6" icon={<ArrowLeft size={16}/>}>
                     الملف الشخصي
                   </Button>
+
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>

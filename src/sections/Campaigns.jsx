@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight, ChevronLeft, ArrowLeft } from 'lucide-react';
 import { FadeIn } from '../components/MotionWrapper';
-import Card from '../components/Card';
 import Button from '../components/Button';
 
 const Campaigns = () => {
@@ -11,23 +10,23 @@ const Campaigns = () => {
     {
       id: 1,
       title: 'الخصم الذهبي للسادس الإعدادي',
-      desc: 'سجل الآن في الباقة المتكاملة للسادس الإعدادي واحصل على خصم 30% بالإضافة إلى الملازم مجاناً.',
+      desc: 'ابدأ رحلة تفوقك الدراسي الآن مع الباقة المتكاملة لطلبة السادس الإعدادي. سجل واحصل على خصم فوري بنسبة 30% مع شحن مجاني لكافة الملازم والكتب الدراسية حتى باب بيتك.',
       image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tag: 'تخفيضات'
+      tag: 'تخفيضات البكالوريا'
     },
     {
       id: 2,
-      title: 'مسابقة أوائل مرماز الوطنية',
-      desc: 'شارك في الاختبار الوطني الشامل واربح جوائز قيمة تصل إلى لابتوبات وأجهزة تابلت للطلبة الأوائل.',
+      title: 'مسابقة أوائل مرماز الوطنية للتميز',
+      desc: 'اختبر معلوماتك وتنافس مع آلاف الطلاب على مستوى العراق. شارك الآن في التقييم الوطني الشامل لتنال فرصة الفوز بجوائز عينية ممتازة تشمل أجهزة لابتوب وألواح ذكية.',
       image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tag: 'مسابقات'
+      tag: 'مسابقات وطنية'
     },
     {
       id: 3,
-      title: 'عرض الإخوة والعائلة',
-      desc: 'خصم خاص عند تسجيل أكثر من طالب من نفس العائلة في أي من دورات مرماز أكاديمي.',
+      title: 'باقة الإخوة والعائلة التضامنية',
+      desc: 'نسعى دائماً لدعم عوائلنا الكريمة في العراق. احصل على باقة الخصم العائلي الخاص عند تسجيل أكثر من طالب من نفس العائلة في أي من تخصصات أو مراحل الأكاديمية.',
       image: 'https://images.unsplash.com/photo-1511629091441-ee46146481b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tag: 'عروض خاصة'
+      tag: 'باقات عائلية'
     }
   ];
 
@@ -44,9 +43,9 @@ const Campaigns = () => {
       <div className="container">
         
         <FadeIn>
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex justify-between items-end mb-16">
             <div>
-              <span className="text-secondary font-bold mb-2 block text-sm uppercase tracking-wider">جديد مرماز</span>
+              <span className="text-secondary font-bold mb-2 block text-sm uppercase tracking-wider">الحملات الترويجية</span>
               <h2 className="section-title mb-0">أحدث الكامبينات والعروض</h2>
             </div>
             <div className="hidden md:flex gap-4">
@@ -60,33 +59,37 @@ const Campaigns = () => {
           </div>
         </FadeIn>
 
+        {/* Swipe-able/Slider Track */}
         <div className="overflow-hidden">
           <div 
             className="slider-track"
             style={{ transform: `translateX(${activeIndex * 100}%)` }}
           >
             {campaigns.map((camp) => (
-              <Card 
-                key={camp.id} 
-                className="slider-item p-0 border-none bg-white flex flex-col"
-                hover={true}
-              >
-                <div className="h-64 overflow-hidden relative">
-                  <span className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-bold text-primary">
-                    {camp.tag}
-                  </span>
-                  <img src={camp.image} alt={camp.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div className="p-8 flex-grow flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold mb-3 line-clamp-1">{camp.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">{camp.desc}</p>
+              <div key={camp.id} className="slider-item">
+                <div className="premium-campaign-card">
+                  
+                  {/* Visual Image */}
+                  <div className="campaign-visual-wrapper">
+                    <img src={camp.image} alt={camp.title} className="campaign-image" />
                   </div>
-                  <Button variant="outline" className="w-full" icon={<ArrowLeft size={18}/>}>
-                    التفاصيل
-                  </Button>
+
+                  {/* Content details */}
+                  <div className="campaign-content-wrapper">
+                    <div>
+                      <span className="text-xs font-bold text-primary bg-primary-glow px-3 py-1 rounded-full inline-block mb-3">
+                        {camp.tag}
+                      </span>
+                      <h3 className="text-2xl font-black mb-3 text-gray-800">{camp.title}</h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{camp.desc}</p>
+                    </div>
+                    <Button variant="outline" className="align-self-start" icon={<ArrowLeft size={16}/>}>
+                      عرض تفاصيل العرض
+                    </Button>
+                  </div>
+
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
