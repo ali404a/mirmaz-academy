@@ -551,59 +551,99 @@
   }
 }
 
-/* PREMIUM REDESIGNED CAMPAIGN BANNER CARD (Stripe/Flowpay Inspired) */
-.premium-campaign-card {
+/* PREMIUM REDESIGNED CAMPAIGN GRID CARD */
+.campaign-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .campaign-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .campaign-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.campaign-card-new {
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   overflow: hidden;
   transition: var(--transition-normal);
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-@media (min-width: 768px) {
-  .premium-campaign-card {
-    grid-template-columns: 1.2fr 1fr;
-  }
-}
-
-.premium-campaign-card:hover {
-  transform: translateY(-5px);
+.campaign-card-new:hover {
+  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
+  border-color: rgba(43, 67, 220, 0.1);
 }
 
-.campaign-visual-wrapper {
+.campaign-card-img {
   position: relative;
-  height: 280px;
+  height: 200px;
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .campaign-visual-wrapper {
-    height: 100%;
-    min-height: 320px;
-  }
-}
-
-.campaign-image {
+.campaign-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: var(--transition-normal);
 }
 
-.premium-campaign-card:hover .campaign-image {
-  transform: scale(1.03);
+.campaign-card-new:hover .campaign-card-img img {
+  transform: scale(1.05);
 }
 
-.campaign-content-wrapper {
-  padding: var(--space-xl);
+.campaign-card-tag-new {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(43, 67, 220, 0.9);
+  color: var(--color-white);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
+.campaign-card-body {
+  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--space-md);
+  flex-grow: 1;
 }
+
+.campaign-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.campaign-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 
 /* PREMIUM STEP CARD LAYOUT */
 .step-card {
