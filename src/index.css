@@ -1342,3 +1342,134 @@ img { max-width: 100%; display: block; }
   width: 28px;
   border-radius: 5px;
 }
+
+/* Light/White sections for alternating design */
+.section-light {
+  background-color: #ffffff;
+  color: #161616;
+}
+
+.section-light .section-label {
+  color: var(--secondary);
+}
+
+.section-light .section-title {
+  color: #161616;
+}
+
+.section-light .stat-card {
+  background: #f8f9fc;
+  border-color: rgba(0,0,0,0.06);
+}
+
+.section-light .stat-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 15px 40px rgba(43, 67, 220, 0.08);
+}
+
+.section-light .stat-number {
+  color: var(--primary);
+}
+
+.section-light .stat-label {
+  color: #161616;
+}
+
+.section-light .stat-desc {
+  color: #6C7280;
+}
+
+.section-light .identity-feature-card {
+  background: #f8f9fc;
+  border-color: rgba(0,0,0,0.06);
+}
+
+.section-light .identity-feature-card:hover {
+  border-color: var(--primary);
+}
+
+.section-light .identity-feature-card h4 {
+  color: #161616;
+}
+
+.section-light .identity-feature-card p {
+  color: #6C7280;
+}
+
+.section-light .popular-card {
+  background: #f8f9fc;
+  border-color: rgba(0,0,0,0.06);
+}
+
+.section-light .popular-card:hover {
+  border-color: var(--primary);
+}
+
+.section-light .popular-card-name {
+  color: #161616;
+}
+
+.section-light .popular-card-sub {
+  color: #6C7280;
+}
+
+.section-light .course-card {
+  background: #f8f9fc;
+  border-color: rgba(0,0,0,0.06);
+}
+
+.section-light .course-card:hover {
+  border-color: var(--primary);
+}
+
+.section-light .course-card-title {
+  color: #161616;
+}
+
+.section-light .branch-card {
+  background: #f8f9fc;
+  border-color: rgba(0,0,0,0.06);
+}
+
+.section-light .branch-card:hover {
+  border-color: var(--primary);
+}
+
+.section-light .branch-card-name {
+  color: #161616;
+}
+
+.section-light .teacher-card-dark {
+  background: #f8f9fc;
+  border-color: rgba(0,0,0,0.06);
+}
+
+.section-light .teacher-card-dark:hover {
+  border-color: var(--primary);
+}
+
+.section-light .teacher-name {
+  color: #161616;
+}
+
+.section-light .teacher-meta {
+  color: #6C7280;
+}
+
+.section-light .tabs-row {
+  background: #f0f2f8;
+  border-color: rgba(0,0,0,0.06);
+}
+
+.section-light .tab-btn {
+  color: #6C7280;
+}
+
+.section-light .tab-btn:hover {
+  color: #161616;
+}
+
+.section-light .carousel-arrows button {
+  border-color: rgba(0,0,0,0.1);
+  color: #161616;
+}

@@ -1,16 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* We will add /experience later */}
-        <Route path="*" element={<Home />} />
-      </Routes>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* We will add /experience later */}
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Router>
+    </LanguageProvider>
   );
 }
 
