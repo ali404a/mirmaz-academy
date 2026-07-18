@@ -21,7 +21,7 @@ const Header = () => {
       <div className="container header-inner">
         
         <Link to="/" className="header-logo">
-          <img src={logoWhite} alt={t("مرماز أكاديمي")} style={{ height: '85px' }} />
+          <img src={logoWhite} alt={t("مرماز أكاديمي")} style={{ height: '110px', objectFit: 'contain', maxHeight: 'none' }} />
         </Link>
 
         <nav className="header-nav">
