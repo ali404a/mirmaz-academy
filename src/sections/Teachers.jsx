@@ -57,10 +57,11 @@ const Teachers = () => {
   return (
     <section className="section bg-white overflow-hidden">
       <div className="container">
+        
         <FadeIn>
           <div className="flex justify-between items-end mb-12">
             <div>
-              <span className="text-secondary font-bold mb-2 block">نخبة العراق</span>
+              <span className="text-secondary font-bold mb-2 block text-sm uppercase tracking-wider">نخبة العراق</span>
               <h2 className="section-title mb-0">أساتذة مرماز</h2>
             </div>
             <div className="hidden md:flex gap-4">
@@ -74,32 +75,36 @@ const Teachers = () => {
           </div>
         </FadeIn>
 
-        <div className="relative">
-          <div className="flex overflow-hidden gap-6 pb-8">
-            {teachers.map((teacher, index) => (
+        <div className="overflow-hidden">
+          <div 
+            className="slider-track"
+            style={{ transform: `translateX(${activeIndex * 100}%)` }}
+          >
+            {teachers.map((teacher) => (
               <Card 
                 key={teacher.id} 
-                className={`min-w-[100%] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] p-0 flex-shrink-0 transition-transform duration-500 ease-in-out`}
-                style={{ transform: `translateX(${activeIndex * 100}%)` }}
+                className="teacher-item p-0 border-none bg-background/50 flex flex-col"
                 hover={true}
               >
                 <div className="h-64 overflow-hidden relative">
-                  <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-amber-500 flex items-center gap-1 shadow-sm">
-                    {teacher.rating} <Star size={14} fill="currentColor"/>
+                  <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-amber-500 flex items-center gap-1 shadow-sm">
+                    {teacher.rating} <Star size={12} fill="currentColor"/>
                   </div>
                   <img src={teacher.image} alt={teacher.name} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-1 text-primary">{teacher.name}</h3>
-                  <p className="text-secondary font-bold mb-4">{teacher.subject}</p>
-                  
-                  <div className="flex justify-center gap-4 text-sm font-medium text-gray-500 mb-6">
-                    <span>{teacher.exp}</span>
-                    <span className="w-1 h-1 rounded-full bg-gray-300 self-center"></span>
-                    <span>{teacher.students}</span>
+                <div className="p-6 text-center flex-grow flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-lg font-bold mb-1 text-primary">{teacher.name}</h3>
+                    <p className="text-secondary text-sm font-bold mb-4">{teacher.subject}</p>
+                    
+                    <div className="flex justify-center gap-3 text-xs font-medium text-gray-500 mb-6">
+                      <span>{teacher.exp}</span>
+                      <span className="w-1 h-1 rounded-full bg-gray-300 self-center"></span>
+                      <span>{teacher.students}</span>
+                    </div>
                   </div>
 
-                  <Button variant="outline" className="w-full" icon={<ArrowLeft size={18}/>}>
+                  <Button variant="outline" className="w-full text-sm" icon={<ArrowLeft size={16}/>}>
                     الملف الشخصي
                   </Button>
                 </div>
@@ -107,6 +112,7 @@ const Teachers = () => {
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
