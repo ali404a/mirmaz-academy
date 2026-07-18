@@ -1,116 +1,144 @@
-/* Button Component */
+/* Button Component Refactored (Premium Apple-like layout) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-xl);
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all var(--transition-normal);
-  gap: var(--spacing-xs);
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition-normal);
+  gap: var(--space-xs);
   text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 15px rgba(43, 67, 220, 0.2);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-light);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 25px rgba(43, 67, 220, 0.3);
 }
 
 .btn-secondary {
-  background-color: var(--color-secondary);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
   color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(255, 103, 0, 0.2);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-secondary-light);
+  background: linear-gradient(135deg, var(--color-secondary-light) 0%, var(--color-secondary) 100%);
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 103, 0, 0.3);
 }
 
 .btn-outline {
-  background-color: transparent;
+  background: transparent;
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
 }
 
 .btn-outline:hover {
-  background-color: rgba(43, 67, 220, 0.05);
+  background-color: var(--color-primary-glow);
+  transform: translateY(-2px);
 }
 
 .btn-text {
-  background-color: transparent;
+  background: transparent;
   color: var(--color-text-dark);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.25rem;
 }
 
 .btn-text:hover {
   color: var(--color-primary);
+  background-color: rgba(43, 67, 220, 0.05);
 }
 
 .btn-large {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-  border-radius: var(--radius-full);
+  padding: 1.125rem 2.5rem;
+  font-size: 1.1rem;
 }
 
-/* Card Component */
+/* Card Component Refactored (Ultra Soft Shadow, Minimalistic Outline) */
 .card {
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
   border: 1px solid var(--color-border);
   overflow: hidden;
+  position: relative;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  transition: var(--transition-normal);
+  pointer-events: none;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
 }
 
-/* Section Containers */
+.card:hover::after {
+  border-color: rgba(43, 67, 220, 0.1);
+}
+
+/* Glassmorphism card options */
+.card-glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Section Containers & Strict Vertical Spacing */
 .section {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--space-2xl) 0;
   position: relative;
+  overflow: hidden;
 }
 
 .section-bg-light {
   background-color: var(--color-background);
 }
 
-.section-bg-surface {
-  background-color: var(--color-surface);
+.section-bg-white {
+  background-color: var(--color-bg-pure);
 }
 
-/* Typography Utilities */
-.heading-1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 900;
-  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
   color: var(--color-text-dark);
 }
 
-.heading-2 {
-  font-size: clamp(2rem, 3vw, 2.5rem);
-  font-weight: 800;
-  line-height: 1.3;
-}
-
-.heading-3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.text-body-large {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: var(--color-text-light);
+.section-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--color-text-muted);
+  max-width: 600px;
 }

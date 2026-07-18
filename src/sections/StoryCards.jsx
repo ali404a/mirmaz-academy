@@ -1,61 +1,62 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/MotionWrapper';
 import Card from '../components/Card';
-import { Target, Lightbulb, ShieldCheck, TrendingUp } from 'lucide-react';
+import { Target, Lightbulb, ShieldCheck, Award } from 'lucide-react';
 
 const StoryCards = () => {
   const stories = [
     {
-      icon: <Lightbulb size={32} className="text-primary" />,
-      title: 'رؤيتنا',
-      desc: 'أن نكون المنصة التعليمية الرقمية الأولى في العراق التي تقود التحول نحو تعليم ذكي، متاح للجميع، وبجودة تضاهي المعايير العالمية.'
+      icon: <Lightbulb size={28} className="text-primary" />,
+      title: 'رؤيتنا الطموحة',
+      desc: 'نسعى لقيادة التحول التعليمي في العراق، عبر توفير بيئة تعليمية ذكية ومتطورة تتجاوز الحواجز الجغرافية والتقليدية.'
     },
     {
-      icon: <Target size={32} className="text-secondary" />,
-      title: 'رسالتنا',
-      desc: 'توفير بيئة تعليمية تفاعلية تجمع نخبة الأساتذة مع أحدث تقنيات التعليم لبناء جيل قادر على تحقيق التميز الأكاديمي.'
+      icon: <Target size={28} className="text-secondary" />,
+      title: 'رسالة مرماز',
+      desc: 'تمكين الطالب العراقي من تحقيق التميز الدراسي عبر ربطه بأقوى الكفاءات التدريسية، وتطبيق أحدث تقنيات التعليم الرقمي.'
     },
     {
-      icon: <ShieldCheck size={32} className="text-emerald-500" />,
-      title: 'لماذا مرماز؟',
-      desc: 'لأننا لا نقدم مجرد دروس، بل نصنع تجربة متكاملة تشمل المتابعة، التقييم، والاختبارات الذكية لضمان تفوق الطالب.'
+      icon: <ShieldCheck size={28} className="text-emerald-500" />,
+      title: 'الجودة والأمان',
+      desc: 'نضمن تجربة دراسية آمنة ومتكاملة، مع محتوى مصمم بدقة عالية ومتابعة دورية تضمن أعلى مستويات الفهم والتحصيل.'
     },
     {
-      icon: <TrendingUp size={32} className="text-purple-500" />,
-      title: 'رحلة النجاح',
-      desc: 'بدأنا بفكرة بسيطة واليوم نفخر بتخريج آلاف الطلاب الأوائل، وتغطية جميع محافظات العراق بكادر تعليمي متميز.'
+      icon: <Award size={28} className="text-purple-500" />,
+      title: 'قصة النجاح',
+      desc: 'منذ انطلاقنا، نجحنا في بناء شبكة تغطي كافة محافظات العراق، لتصبح مرماز اليوم شريك التفوق للآلاف من الطلبة الأوائل.'
     }
   ];
 
   return (
-    <section className="section section-bg-light overflow-hidden">
+    <section className="section section-bg-light">
       <div className="container">
+        
         <FadeIn y={30}>
           <div className="flex flex-col items-center text-center mb-16">
-            <span className="text-secondary font-bold mb-2">عن المنصة</span>
-            <h2 className="section-title">من هي مرماز؟</h2>
-            <p className="section-subtitle max-w-2xl mx-auto">
-              قصة طموح بدأت من العراق لتغيير واقع التعليم الرقمي وتقديم تجربة تليق بطموحات طلابنا.
+            <span className="text-secondary font-bold mb-2 text-sm uppercase tracking-wider">من نحن</span>
+            <h2 className="section-title">الهوية التعليمية لمرماز</h2>
+            <p className="section-subtitle">
+              نحن لا نقدم دروساً رقمية فحسب، بل نبني منظومة متكاملة تدعم الطالب في كل خطوة من رحلته الدراسية.
             </p>
           </div>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerContainer className="story-grid">
           {stories.map((story, index) => (
-            <StaggerItem key={index} y={50}>
-              <Card className="h-full flex flex-col items-center text-center p-8 border-t-4 border-t-transparent hover:border-t-primary">
-                <div className="w-16 h-16 rounded-2xl bg-surface flex items-center justify-center mb-6">
+            <StaggerItem key={index} y={30}>
+              <Card className="h-full flex flex-col p-8 border-none bg-white hover:border-b-4 hover:border-b-primary">
+                <div className="w-12 h-12 rounded-xl bg-surface flex items-center justify-center mb-6">
                   {story.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4">{story.title}</h3>
-                <p className="text-muted leading-relaxed text-sm">
+                <h3 className="text-xl font-bold mb-3">{story.title}</h3>
+                <p className="text-gray-500 leading-relaxed text-sm">
                   {story.desc}
                 </p>
               </Card>
             </StaggerItem>
           ))}
         </StaggerContainer>
+
       </div>
     </section>
   );
