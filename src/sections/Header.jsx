@@ -50,47 +50,44 @@ const Header = () => {
           >
             الأقسام <ChevronDown size={16} />
             {activeMenu === 'departments' && (
-              <div className="absolute top-[100%] right-0 w-[600px] bg-white text-gray-900 shadow-xl rounded-2xl p-6 grid grid-cols-2 gap-4 border border-gray-100">
+              <div className="mega-menu">
                 <div>
-                  <h3 className="font-bold text-primary mb-4 flex items-center gap-2"><BookOpen size={18}/> المراحل الدراسية</h3>
-                  <ul className="space-y-2">
-                    <li><Link to="/dept/3rd-inter" className="hover:text-primary transition-colors">الثالث متوسط</Link></li>
-                    <li><Link to="/dept/6th-prep" className="hover:text-primary transition-colors">السادس الإعدادي</Link></li>
-                    <li><Link to="/dept/science" className="hover:text-primary transition-colors">الفرع العلمي</Link></li>
-                    <li><Link to="/dept/arts" className="hover:text-primary transition-colors">الفرع الأدبي</Link></li>
-                    <li><Link to="/dept/vocational" className="hover:text-primary transition-colors">المهني</Link></li>
+                  <h3><BookOpen size={16}/> المراحل الدراسية</h3>
+                  <ul>
+                    <li><Link to="/dept/3rd-inter">الثالث متوسط</Link></li>
+                    <li><Link to="/dept/6th-prep">السادس الإعدادي</Link></li>
+                    <li><Link to="/dept/science">الفرع العلمي</Link></li>
+                    <li><Link to="/dept/arts">الفرع الأدبي</Link></li>
+                    <li><Link to="/dept/vocational">المهني</Link></li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-bold text-primary mb-4 flex items-center gap-2"><MonitorPlay size={18}/> تطوير المهارات</h3>
-                  <ul className="space-y-2">
-                    <li><Link to="/dept/university" className="hover:text-primary transition-colors">الجامعات</Link></li>
-                    <li><Link to="/dept/english" className="hover:text-primary transition-colors">اللغة الإنجليزية</Link></li>
-                    <li><Link to="/dept/programming" className="hover:text-primary transition-colors">البرمجة</Link></li>
-                    <li><Link to="/dept/ai" className="hover:text-primary transition-colors">الذكاء الاصطناعي</Link></li>
+                  <h3><MonitorPlay size={16}/> تطوير المهارات</h3>
+                  <ul>
+                    <li><Link to="/dept/university">الجامعات</Link></li>
+                    <li><Link to="/dept/english">اللغة الإنجليزية</Link></li>
+                    <li><Link to="/dept/programming">البرمجة</Link></li>
+                    <li><Link to="/dept/ai">الذكاء الاصطناعي</Link></li>
                   </ul>
                 </div>
               </div>
             )}
           </div>
 
-          {/* Teachers Mega Menu */}
+          {/* Teachers Dropdown */}
           <div 
             className="nav-link py-6"
             onMouseEnter={() => handleMenuHover('teachers')}
           >
             الأساتذة <ChevronDown size={16} />
             {activeMenu === 'teachers' && (
-              <div className="absolute top-[100%] right-1/4 w-[300px] bg-white text-gray-900 shadow-xl rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold text-primary mb-4 flex items-center gap-2"><Users size={18}/> حسب المادة</h3>
-                <ul className="space-y-2">
-                  <li><Link to="/teachers/math" className="hover:text-primary transition-colors">الرياضيات</Link></li>
-                  <li><Link to="/teachers/physics" className="hover:text-primary transition-colors">الفيزياء</Link></li>
-                  <li><Link to="/teachers/chemistry" className="hover:text-primary transition-colors">الكيمياء</Link></li>
-                  <li><Link to="/teachers/biology" className="hover:text-primary transition-colors">الأحياء</Link></li>
-                  <li><Link to="/teachers/arabic" className="hover:text-primary transition-colors">اللغة العربية</Link></li>
-                </ul>
-              </div>
+              <ul className="dropdown-menu">
+                <li><Link to="/teachers/math">الرياضيات</Link></li>
+                <li><Link to="/teachers/physics">الفيزياء</Link></li>
+                <li><Link to="/teachers/chemistry">الكيمياء</Link></li>
+                <li><Link to="/teachers/biology">الأحياء</Link></li>
+                <li><Link to="/teachers/arabic">اللغة العربية</Link></li>
+              </ul>
             )}
           </div>
 
@@ -98,21 +95,19 @@ const Header = () => {
             الدورات
           </div>
           
+          {/* Campaigns Dropdown */}
           <div 
             className="nav-link py-6"
             onMouseEnter={() => handleMenuHover('campaigns')}
           >
             الكامبينات <ChevronDown size={16} />
             {activeMenu === 'campaigns' && (
-              <div className="absolute top-[100%] left-1/4 w-[300px] bg-white text-gray-900 shadow-xl rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold text-primary mb-4 flex items-center gap-2"><Award size={18}/> عروض مرماز</h3>
-                <ul className="space-y-2">
-                  <li><Link to="/campaigns/current" className="hover:text-primary transition-colors">العروض الحالية</Link></li>
-                  <li><Link to="/campaigns/sales" className="hover:text-primary transition-colors">التخفيضات</Link></li>
-                  <li><Link to="/campaigns/competitions" className="hover:text-primary transition-colors">المسابقات</Link></li>
-                  <li><Link to="/campaigns/prizes" className="hover:text-primary transition-colors">الجوائز</Link></li>
-                </ul>
-              </div>
+              <ul className="dropdown-menu">
+                <li><Link to="/campaigns/current">العروض الحالية</Link></li>
+                <li><Link to="/campaigns/sales">التخفيضات</Link></li>
+                <li><Link to="/campaigns/competitions">المسابقات</Link></li>
+                <li><Link to="/campaigns/prizes">الجوائز</Link></li>
+              </ul>
             )}
           </div>
 

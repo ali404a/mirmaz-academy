@@ -124,6 +124,119 @@
   transform: translateY(0);
 }
 
+/* Dropdown & Mega Menu Styling */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  transform: translateX(50%) translateY(10px);
+  width: 260px;
+  background-color: var(--color-white);
+  color: var(--color-text-dark);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  text-align: right;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-normal);
+}
+
+.nav-link:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(50%) translateY(0);
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-dark);
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--color-primary-glow);
+  color: var(--color-primary);
+  transform: translateX(-4px);
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 520px;
+  background-color: var(--color-white);
+  color: var(--color-text-dark);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  text-align: right;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: var(--transition-normal);
+}
+
+.nav-link:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mega-menu h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mega-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mega-menu a {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  transition: var(--transition-fast);
+  padding: 0.25rem 0;
+}
+
+.mega-menu a:hover {
+  color: var(--color-primary);
+  transform: translateX(-4px);
+}
+
+
 /* Hero Section Styles (Premium Deep-Blue Brand Gradient) */
 .hero {
   min-height: 100vh;
