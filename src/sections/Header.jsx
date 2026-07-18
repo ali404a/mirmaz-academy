@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, User, Menu, ChevronDown, BookOpen, MonitorPlay, Users, Award } from 'lucide-react';
 import Button from '../components/Button';
+import logoBlue from '../assets/logo_blue.png';
+import logoWhite from '../assets/logo_white.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,13 +28,14 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled || activeMenu ? 'solid' : 'transparent'}`} onMouseLeave={handleMenuLeave}>
       <div className="container header-container">
-        {/* Logo */}
+        
+        {/* Logo Image */}
         <Link to="/" className="header-logo">
-          <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 50 L50 70 L80 50 M20 70 A30 30 0 0 1 50 30 A30 30 0 0 1 80 70" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M35 40 L50 50 L65 40" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span>مرماز أكاديمي</span>
+          <img 
+            src={isScrolled || activeMenu ? logoBlue : logoWhite} 
+            alt="مرماز أكاديمي" 
+            style={{ height: '40px', objectFit: 'contain' }}
+          />
         </Link>
 
         {/* Desktop Navigation */}

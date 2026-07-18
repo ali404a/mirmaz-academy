@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import logoWhite from '../assets/logo_white.png';
 
 const Footer = () => {
   return (
@@ -12,12 +13,12 @@ const Footer = () => {
           
           {/* Brand Col */}
           <div className="flex flex-col gap-6">
-            <Link to="/" className="header-logo" style={{ color: 'white' }}>
-              <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 50 L50 70 L80 50 M20 70 A30 30 0 0 1 50 30 A30 30 0 0 1 80 70" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M35 40 L50 50 L65 40" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="font-extrabold">مرماز أكاديمي</span>
+            <Link to="/" className="header-logo">
+              <img 
+                src={logoWhite} 
+                alt="مرماز أكاديمي" 
+                style={{ height: '45px', objectFit: 'contain' }}
+              />
             </Link>
             
             <p className="text-sm leading-relaxed">
