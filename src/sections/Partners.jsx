@@ -1,50 +1,46 @@
 import React from 'react';
-import { FadeIn } from '../components/MotionWrapper';
+import { motion } from 'framer-motion';
 
 const Partners = () => {
-  // Array of mock partner names to display in place of logos for now
   const partners = [
-    'وزارة التربية العراقية',
-    'شركة زين للاتصالات',
-    'آسيا سيل',
-    'مايكروسوفت العراق',
-    'مؤسسة الرؤية التعليمية',
-    'منصة نون أكاديمي',
-    'مكتبة جرير',
-    'جامعة بغداد'
+    { name: 'وزارة التربية', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=300&q=80' },
+    { name: 'زين للاتصالات', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=300&q=80' },
+    { name: 'آسيا سيل', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=300&q=80' },
+    { name: 'مايكروسوفت العراق', image: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=300&q=80' },
+    { name: 'مؤسسة الرؤية', image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=300&q=80' },
+    { name: 'جامعة بغداد', image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=300&q=80' },
   ];
 
   return (
-    <section className="py-12 bg-white border-y border-gray-100 overflow-hidden">
+    <section className="branches-section">
       <div className="container">
-        
-        <FadeIn>
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-bold text-gray-500 uppercase tracking-wide">
-              شركاؤنا في النجاح
-            </h3>
-          </div>
-        </FadeIn>
-
-        {/* Marquee Animation Container */}
-        <FadeIn delay={0.2}>
-          <div className="relative flex overflow-x-hidden group">
-            <div className="animate-marquee flex items-center space-x-12 space-x-reverse whitespace-nowrap">
-              {partners.map((partner, index) => (
-                <div key={index} className="flex items-center justify-center px-8 py-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary/30 transition-colors min-w-[200px]">
-                  <span className="font-bold text-gray-400 text-lg">{partner}</span>
+        <div className="section-header">
+          <span className="section-label">شراكات النجاح</span>
+          <h2 className="section-title">شركاؤنا</h2>
+        </div>
+        <div className="branches-grid">
+          <div className="branches-label">شركاؤنا</div>
+          <div className="branches-cards">
+            {partners.map((p, i) => (
+              <motion.div
+                key={i}
+                className="branch-card"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+              >
+                <div className="branch-card-img">
+                  <img src={p.image} alt={p.name} />
                 </div>
-              ))}
-              {/* Duplicate for infinite seamless scroll */}
-              {partners.map((partner, index) => (
-                <div key={`dup-${index}`} className="flex items-center justify-center px-8 py-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary/30 transition-colors min-w-[200px]">
-                  <span className="font-bold text-gray-400 text-lg">{partner}</span>
-                </div>
-              ))}
-            </div>
+                <div className="branch-card-name">{p.name}</div>
+              </motion.div>
+            ))}
           </div>
-        </FadeIn>
-
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <button className="btn-pill btn-pill-outline">المزيد</button>
+        </div>
       </div>
     </section>
   );

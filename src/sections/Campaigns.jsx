@@ -1,96 +1,79 @@
 import React from 'react';
-import { FadeIn, StaggerContainer, StaggerItem } from '../components/MotionWrapper';
-import Button from '../components/Button';
-import { Calendar, Users, ArrowLeft } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Calendar, Users } from 'lucide-react';
 
 const Campaigns = () => {
   const campaigns = [
     {
-      id: 1,
-      title: 'الخصم الذهبي للسادس الإعدادي',
-      desc: 'سجل الآن في الباقة المتكاملة للسادس الإعدادي واحصل على خصم 30% مع الملازم مجاناً حتى باب بيتك.',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tag: 'تخفيضات البكالوريا',
-      daysLeft: '3 أيام متبقية',
-      enrolled: '450 طالب مسجل'
+      title: 'الخصم الذهبي للسادس',
+      sub: 'باقة البكالوريا المتكاملة',
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400&q=80',
+      meta: '450 طالب',
     },
     {
-      id: 2,
-      title: 'مسابقة أوائل مرماز الوطنية',
-      desc: 'شارك في الاختبار الوطني الشامل واربح جوائز قيمة تشمل أجهزة تابلت ولابتوبات للطلبة الأوائل.',
-      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tag: 'مسابقات وطنية',
-      daysLeft: '7 أيام متبقية',
-      enrolled: '1.2K مشارك'
+      title: 'مسابقة أوائل مرماز',
+      sub: 'المسابقة الوطنية الشاملة',
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80',
+      meta: '1.2K مشارك',
     },
     {
-      id: 3,
-      title: 'باقة الإخوة والعائلة التضامنية',
-      desc: 'خصم عائلي خاص ومستمر عند تسجيل أكثر من طالب من نفس العائلة في أي من دورات مرماز.',
-      image: 'https://images.unsplash.com/photo-1511629091441-ee46146481b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tag: 'باقات عائلية',
-      daysLeft: 'عرض مستمر',
-      enrolled: '80+ عائلة مستفيدة'
-    }
+      title: 'باقة الإخوة العائلية',
+      sub: 'خصم خاص للعوائل',
+      image: 'https://images.unsplash.com/photo-1511629091441-ee46146481b6?auto=format&fit=crop&w=400&q=80',
+      meta: '80+ عائلة',
+    },
+    {
+      title: 'دورة اللغة الإنجليزية',
+      sub: 'IELTS المكثفة',
+      image: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=400&q=80',
+      meta: '300 طالب',
+    },
+    {
+      title: 'برنامج التميز الصيفي',
+      sub: 'مراجعة صيفية شاملة',
+      image: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=400&q=80',
+      meta: '600 مشارك',
+    },
+    {
+      title: 'جائزة المتفوقين',
+      sub: 'مكافآت للأوائل',
+      image: 'https://images.unsplash.com/photo-1567168544813-cc03465b4fab?auto=format&fit=crop&w=400&q=80',
+      meta: '200 متفوق',
+    },
   ];
 
   return (
-    <section className="section bg-surface border-y border-gray-100">
+    <section className="popular-section">
       <div className="container">
-        
-        <FadeIn>
-          <div className="text-center mb-16">
-            <span className="text-secondary font-bold mb-2 block text-sm uppercase tracking-wider">الحملات الترويجية</span>
-            <h2 className="section-title">أحدث الكامبينات والعروض</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
-              عروض حصرية ومسابقات وطنية مخصصة لدعم تفوق ونجاح الطلاب في العراق.
-            </p>
-          </div>
-        </FadeIn>
-
-        {/* 3-Column Responsive Grid Layout (Neat & Balanced) */}
-        <StaggerContainer className="campaign-grid">
-          {campaigns.map((camp, index) => (
-            <StaggerItem key={camp.id}>
-              <div className="campaign-card-new">
-                
-                {/* Visual Image & Floating tag */}
-                <div className="campaign-card-img">
-                  <span className="campaign-card-tag-new">{camp.tag}</span>
-                  <img src={camp.image} alt={camp.title} />
-                </div>
-
-                {/* Details Body */}
-                <div className="campaign-card-body">
-                  <div>
-                    <h3 className="text-xl font-bold mb-3 text-gray-800">{camp.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-6">{camp.desc}</p>
-                  </div>
-                  
-                  <div>
-                    {/* Marketing Details Bar */}
-                    <div className="campaign-card-meta">
-                      <div className="campaign-meta-item">
-                        <Calendar size={14} className="text-primary" />
-                        <span>{camp.daysLeft}</span>
-                      </div>
-                      <div className="campaign-meta-item">
-                        <Users size={14} className="text-secondary" />
-                        <span>{camp.enrolled}</span>
-                      </div>
-                    </div>
-                    
-                    <Button variant="outline" className="w-full mt-4" icon={<ArrowLeft size={16}/>}>
-                      عرض التفاصيل
-                    </Button>
-                  </div>
-                </div>
-
+        <div className="section-header">
+          <span className="section-label">الحملات والعروض</span>
+          <h2 className="section-title"><span className="underline-box">أحدث</span> الكامبينات</h2>
+        </div>
+        <div className="popular-grid">
+          {campaigns.map((c, i) => (
+            <motion.div
+              key={i}
+              className="popular-card"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+            >
+              <div className="popular-card-circle">
+                <img src={c.image} alt={c.title} />
               </div>
-            </StaggerItem>
+              <div className="popular-card-body">
+                <div className="popular-card-name">{c.title}</div>
+                <div className="popular-card-sub">{c.sub}</div>
+                <div style={{ marginTop: '0.75rem' }}>
+                  <button className="btn-pill btn-pill-outline" style={{ padding: '0.4rem 1.2rem', fontSize: '0.75rem' }}>
+                    التفاصيل
+                  </button>
+                </div>
+              </div>
+            </motion.div>
           ))}
-        </StaggerContainer>
-
+        </div>
       </div>
     </section>
   );

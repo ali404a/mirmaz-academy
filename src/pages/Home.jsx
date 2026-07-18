@@ -1,35 +1,58 @@
 import React from 'react';
 import Header from '../sections/Header';
 import Hero from '../sections/Hero';
+import Ticker from '../components/Ticker';
+import Departments from '../sections/Departments';
+import Statement from '../sections/Statement';
 import Stats from '../sections/Stats';
 import Identity from '../sections/Identity';
-import AdBanners from '../sections/AdBanners';
 import Campaigns from '../sections/Campaigns';
-import EducationalMap from '../sections/EducationalMap';
-import Departments from '../sections/Departments';
+import AdBanners from '../sections/AdBanners';
 import Teachers from '../sections/Teachers';
 import Partners from '../sections/Partners';
+import Contact from '../sections/Contact';
 import Footer from '../sections/Footer';
 
 const Home = () => {
   return (
-    <div className="page-wrapper">
+    <div>
       <Header />
       <main>
+        {/* Hero Section */}
         <Hero />
-        {/* Stats placed right above Identity as requested */}
-        <Stats />
-        {/* Unified Identity section replacing WhyMirmaz and StoryCards */}
-        <Identity />
-        {/* New Ads Banner section */}
-        <AdBanners />
-        {/* Existing Campaigns (أحدث الكامبينات والعروض) */}
-        <Campaigns />
-        <EducationalMap />
+        
+        {/* Departments Tabs + Carousel */}
         <Departments />
+        
+        {/* Big Statement with diagonal stripe */}
+        <Statement />
+        
+        {/* Marquee Ticker */}
+        <Ticker />
+        
+        {/* Stats */}
+        <Stats />
+        
+        {/* Identity (About + Why Mirmaz) */}
+        <Identity />
+        
+        {/* Ad Banners Slider */}
+        <AdBanners />
+        
+        {/* Campaigns (Popular Grid) */}
+        <Campaigns />
+        
+        {/* Teachers */}
         <Teachers />
-        {/* Partners Marquee below Teachers */}
+        
+        {/* Partners (Branches style) */}
         <Partners />
+        
+        {/* Ticker Strip */}
+        <Ticker />
+        
+        {/* Contact Form */}
+        <Contact />
       </main>
       <Footer />
     </div>

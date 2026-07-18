@@ -1,156 +1,49 @@
-import React, { useState } from 'react';
-import { FadeIn } from '../components/MotionWrapper';
-import Button from '../components/Button';
-import { Star, ChevronRight, ChevronLeft, ArrowLeft } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star } from 'lucide-react';
 
 const Teachers = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  // Increased mock teachers array to 8
   const teachers = [
-    {
-      id: 1,
-      name: 'أ. علي المرتضى',
-      subject: 'الرياضيات',
-      exp: '15 سنة خبرة',
-      students: '10K+ طالب',
-      rating: 4.9,
-      image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      id: 2,
-      name: 'د. سارة أحمد',
-      subject: 'الفيزياء',
-      exp: '10 سنوات خبرة',
-      students: '8K+ طالب',
-      rating: 4.8,
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      id: 3,
-      name: 'أ. محمد حسن',
-      subject: 'الكيمياء',
-      exp: '12 سنة خبرة',
-      students: '15K+ طالب',
-      rating: 5.0,
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      id: 4,
-      name: 'د. نور محمد',
-      subject: 'الأحياء',
-      exp: '8 سنوات خبرة',
-      students: '5K+ طالب',
-      rating: 4.7,
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      id: 5,
-      name: 'أ. مصطفى العراقي',
-      subject: 'اللغة الإنجليزية',
-      exp: '14 سنة خبرة',
-      students: '12K+ طالب',
-      rating: 4.9,
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      id: 6,
-      name: 'أ. زينب خليل',
-      subject: 'اللغة العربية',
-      exp: '20 سنة خبرة',
-      students: '20K+ طالب',
-      rating: 5.0,
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      id: 7,
-      name: 'أ. أحمد جاسم',
-      subject: 'التاريخ',
-      exp: '9 سنوات خبرة',
-      students: '4K+ طالب',
-      rating: 4.6,
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      id: 8,
-      name: 'م. ليلى شاكر',
-      subject: 'الاقتصاد',
-      exp: '11 سنة خبرة',
-      students: '6K+ طالب',
-      rating: 4.8,
-      image: 'https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    }
+    { name: 'أ. علي المرتضى', subject: 'الرياضيات', rating: 4.9, students: '10K+', image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=300&q=80' },
+    { name: 'د. سارة أحمد', subject: 'الفيزياء', rating: 4.8, students: '8K+', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80' },
+    { name: 'أ. محمد حسن', subject: 'الكيمياء', rating: 5.0, students: '15K+', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80' },
+    { name: 'د. نور محمد', subject: 'الأحياء', rating: 4.7, students: '5K+', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80' },
+    { name: 'أ. مصطفى العراقي', subject: 'الإنجليزية', rating: 4.9, students: '12K+', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80' },
+    { name: 'أ. زينب خليل', subject: 'العربية', rating: 5.0, students: '20K+', image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80' },
+    { name: 'أ. أحمد جاسم', subject: 'التاريخ', rating: 4.6, students: '4K+', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80' },
+    { name: 'م. ليلى شاكر', subject: 'الاقتصاد', rating: 4.8, students: '6K+', image: 'https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?auto=format&fit=crop&w=300&q=80' },
   ];
 
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev >= teachers.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev <= 0 ? teachers.length - 1 : prev - 1));
-  };
-
   return (
-    <section className="section bg-white overflow-hidden">
+    <section className="popular-section">
       <div className="container">
-        
-        <FadeIn>
-          <div className="flex justify-between items-end mb-16">
-            <div>
-              <span className="text-secondary font-bold mb-2 block text-sm uppercase tracking-wider">نخبة العراق</span>
-              <h2 className="section-title mb-0">أساتذة مرماز الأكاديميون</h2>
-            </div>
-            <div className="hidden md:flex gap-4">
-              <button onClick={prevSlide} className="w-12 h-12 rounded-full bg-surface flex items-center justify-center shadow-sm hover:bg-primary hover:text-white transition-colors" aria-label="السابق">
-                <ChevronRight size={24} />
-              </button>
-              <button onClick={nextSlide} className="w-12 h-12 rounded-full bg-surface flex items-center justify-center shadow-sm hover:bg-primary hover:text-white transition-colors" aria-label="التالي">
-                <ChevronLeft size={24} />
-              </button>
-            </div>
-          </div>
-        </FadeIn>
-
-        <div className="overflow-hidden">
-          {/* We apply a calc to show 1 item on mobile, 2 on tablet, 3-4 on desktop by controlling width via CSS */}
-          <div 
-            className="slider-track"
-            style={{ transform: `translateX(${activeIndex * 100}%)` }}
-          >
-            {teachers.map((teacher) => (
-              <div key={teacher.id} className="teacher-item min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
-                <div className="premium-teacher-card">
-                  
-                  {/* Circular Avatar wrapper */}
-                  <div className="teacher-avatar-wrapper">
-                    <img src={teacher.image} alt={teacher.name} className="teacher-avatar" />
-                  </div>
-
-                  {/* Profile info */}
-                  <div>
-                    <span className="teacher-tag">{teacher.subject}</span>
-                    <h3 className="text-xl font-bold mb-2 text-gray-800">{teacher.name}</h3>
-                    
-                    <div className="flex items-center justify-center gap-1 text-sm font-bold text-amber-500 mb-4">
-                      <Star size={14} fill="currentColor" />
-                      <span>{teacher.rating} تقييم</span>
-                    </div>
-
-                    <p className="text-xs text-gray-500 font-medium">
-                      {teacher.exp} • {teacher.students}
-                    </p>
-                  </div>
-
-                  <Button variant="outline" className="w-full mt-6" icon={<ArrowLeft size={16}/>}>
-                    الملف الشخصي
-                  </Button>
-
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="section-header">
+          <span className="section-label">نخبة العراق</span>
+          <h2 className="section-title">أساتذة <span className="underline-box">مرماز</span> الأكاديميون</h2>
         </div>
-
+        <div className="teachers-grid">
+          {teachers.map((t, i) => (
+            <motion.div
+              key={i}
+              className="teacher-card-dark"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06 }}
+            >
+              <div className="teacher-avatar-circle">
+                <img src={t.image} alt={t.name} />
+              </div>
+              <span className="teacher-subject-tag">{t.subject}</span>
+              <h3 className="teacher-name">{t.name}</h3>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.25rem', marginBottom: '0.4rem' }}>
+                <Star size={12} fill="#ff6700" color="#ff6700" />
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#ff6700' }}>{t.rating}</span>
+              </div>
+              <div className="teacher-meta">{t.students} طالب</div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,95 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, ArrowLeft, Award, Sparkles } from 'lucide-react';
-import Button from '../components/Button';
-import { StaggerContainer, StaggerItem, FadeIn } from '../components/MotionWrapper';
-import heroBanner from '../assets/hero_banner.jpg';
+import { Sparkles } from 'lucide-react';
+import heroImg from '../assets/hero_banner.jpg';
 
 const Hero = () => {
   return (
-    <section className="hero">
-      {/* Decorative Glow Backgrounds */}
-      <div className="glow-bg glow-blue" style={{ top: '10%', right: '5%' }}></div>
-      <div className="glow-bg glow-orange" style={{ bottom: '15%', left: '10%' }}></div>
-
-      <div className="container hero-container">
+    <section className="hero-section">
+      <div className="container hero-grid">
         
-        {/* Left Content (Text) */}
-        <div className="hero-content">
-          <StaggerContainer delayChildren={0.1} staggerChildren={0.1}>
-            <StaggerItem>
-              <div className="hero-badge">
-                <Sparkles size={16} className="text-secondary" />
-                <span>المنصة التعليمية الأكبر والأكثر ثقة في العراق</span>
-              </div>
-            </StaggerItem>
-            
-            <StaggerItem>
-              <h1 className="hero-title">
-                مستقبل التعليم <br /> <span>يبدأ من هنا.</span>
-              </h1>
-            </StaggerItem>
-            
-            <StaggerItem>
-              <p className="hero-description">
-                نحن في مرماز لا نقدم دروساً تقليدية... بل نصنع رحلة تميز أكاديمي متكاملة يقودها نخبة أساتذة العراق لتأهيلك للنجاح والتفوق عبر بيئة تعليمية ذكية.
-              </p>
-            </StaggerItem>
-            
-            <StaggerItem>
-              <div className="hero-buttons">
-                <Button variant="primary" size="large" icon={<ArrowLeft size={18} />}>
-                  ابدأ مسيرتك التعليمية
-                </Button>
-                <Button variant="outline" size="large" icon={<Play size={18} fill="currentColor" />}>
-                  استكشف المواد والدورات
-                </Button>
-              </div>
-            </StaggerItem>
-          </StaggerContainer>
-        </div>
+        {/* Left: Text Content */}
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <div className="hero-badge">
+            <Sparkles size={14} />
+            <span>المنصة التعليمية #1 في العراق</span>
+          </div>
 
-        {/* Right Content (Visual representation) */}
-        <div className="hero-visual">
-          <FadeIn delay={0.3} duration={0.8} className="w-full flex justify-center">
-            <div className="hero-main-wrapper">
-              <img 
-                src={heroBanner} 
-                alt="مرماز أكاديمي - المستقبل الذكي"
-                className="hero-main-image"
-              />
+          <h1 className="hero-title">
+            حيث كل درس يروي قصة نجاح…
+            <br />
+            <span className="highlight">ما قصتك أنت؟</span>
+          </h1>
+
+          <p className="hero-desc">
+            انضم إلى أكثر من 120 ألف طالب يحققون أحلامهم مع نخبة أساتذة مرماز. 
+            شروحات تفاعلية مباشرة، اختبارات ذكية، ومتابعة مستمرة تضمن لك التفوق.
+          </p>
+
+          <div className="hero-meta">
+            <div>التقييم: <span>⭐ 4.9</span></div>
+            <div>الطلاب: <span>120K+</span></div>
+          </div>
+
+          <button className="btn-pill btn-pill-secondary" style={{ fontSize: '1rem', padding: '0.9rem 2.5rem' }}>
+            ابدأ رحلتك الآن
+          </button>
+        </motion.div>
+
+        {/* Right: Visual */}
+        <motion.div
+          className="hero-visual"
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+        >
+          <div className="hero-image-frame">
+            <img src={heroImg} alt="مرماز أكاديمي" />
+            {/* Diagonal blue stripe */}
+            <div className="hero-diagonal-stripe">
+              <span>مرماز أكاديمي</span>
             </div>
-          </FadeIn>
-
-          {/* Floating UI Elements */}
-          <motion.div 
-            animate={{ y: [0, -10, 0] }} 
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="floating-card float-1"
-          >
-            <span className="floating-card-title">+120K</span>
-            <span className="floating-card-subtitle">طالب متفوق</span>
-          </motion.div>
-
-          <motion.div 
-            animate={{ y: [0, 15, 0] }} 
-            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
-            className="floating-card float-2"
-          >
-            <span className="floating-card-title">+150</span>
-            <span className="floating-card-subtitle">أستاذ خبير</span>
-          </motion.div>
-
-          <motion.div 
-            animate={{ y: [0, -8, 0] }} 
-            transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 1 }}
-            className="floating-card float-3"
-          >
-            <span className="floating-card-title">18</span>
-            <span className="floating-card-subtitle">محافظة عراقية</span>
-          </motion.div>
-        </div>
-
+          </div>
+          <div className="hero-vertical-text">MIRMAZ</div>
+        </motion.div>
       </div>
     </section>
   );

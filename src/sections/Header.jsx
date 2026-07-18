@@ -1,156 +1,83 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Menu, ChevronDown, BookOpen, MonitorPlay, Globe } from 'lucide-react';
-import Button from '../components/Button';
-import logoBlue from '../assets/logo_blue.png';
+import { Search, Globe, Menu, ChevronDown, X } from 'lucide-react';
 import logoWhite from '../assets/logo_white.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
-  const [lang, setLang] = useState('AR'); // Arabic default
+  const [lang, setLang] = useState('AR');
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMenuHover = (menu) => {
-    setActiveMenu(menu);
-  };
-
-  const handleMenuLeave = () => {
-    setActiveMenu(null);
-  };
-
-  const toggleLanguage = () => {
-    setLang(lang === 'AR' ? 'EN' : 'AR');
-  };
-
   return (
-    <header className={`header ${isScrolled || activeMenu ? 'solid' : 'transparent'}`} onMouseLeave={handleMenuLeave}>
-      <div className="container header-container">
+    <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container header-inner">
         
-        {/* Logo Image (Increased height drastically as requested) */}
         <Link to="/" className="header-logo">
-          <img 
-            src={isScrolled || activeMenu ? logoBlue : logoWhite} 
-            alt="مرماز أكاديمي" 
-            style={{ height: '75px', objectFit: 'contain' }}
-          />
+          <img src={logoWhite} alt="مرماز أكاديمي" />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="header-nav relative h-full">
-          <Link to="/" className="nav-link py-6">الرئيسية</Link>
-          <Link to="/about" className="nav-link py-6">من نحن</Link>
-          
-          {/* Departments Mega Menu */}
-          <div 
-            className="nav-link py-6"
-            onMouseEnter={() => handleMenuHover('departments')}
-          >
-            الأقسام <ChevronDown size={16} />
-            {activeMenu === 'departments' && (
-              <div className="mega-menu">
-                <div>
-                  <h3><BookOpen size={16}/> المراحل الدراسية</h3>
-                  <ul>
-                    <li><Link to="/dept/3rd-inter">الثالث متوسط</Link></li>
-                    <li><Link to="/dept/6th-prep">السادس الإعدادي</Link></li>
-                    <li><Link to="/dept/science">الفرع العلمي</Link></li>
-                    <li><Link to="/dept/arts">الفرع الأدبي</Link></li>
-                    <li><Link to="/dept/vocational">المهني</Link></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3><MonitorPlay size={16}/> تطوير المهارات</h3>
-                  <ul>
-                    <li><Link to="/dept/university">الجامعات</Link></li>
-                    <li><Link to="/dept/english">اللغة الإنجليزية</Link></li>
-                    <li><Link to="/dept/programming">البرمجة</Link></li>
-                    <li><Link to="/dept/ai">الذكاء الاصطناعي</Link></li>
-                  </ul>
-                </div>
+        <nav className="header-nav">
+          <div className="nav-item active">الرئيسية</div>
+          <div className="nav-item">من نحن</div>
+
+          <div className="nav-item" onMouseEnter={() => setActiveMenu('dept')} onMouseLeave={() => setActiveMenu(null)}>
+            الأقسام <ChevronDown size={14} />
+            {activeMenu === 'dept' && (
+              <div className="nav-dropdown">
+                <Link to="/dept/3rd">الثالث متوسط</Link>
+                <Link to="/dept/6th">السادس الإعدادي</Link>
+                <Link to="/dept/science">الفرع العلمي</Link>
+                <Link to="/dept/arts">الفرع الأدبي</Link>
+                <Link to="/dept/english">اللغة الإنجليزية</Link>
               </div>
             )}
           </div>
 
-          {/* Teachers Dropdown */}
-          <div 
-            className="nav-link py-6"
-            onMouseEnter={() => handleMenuHover('teachers')}
-          >
-            الأساتذة <ChevronDown size={16} />
+          <div className="nav-item" onMouseEnter={() => setActiveMenu('teachers')} onMouseLeave={() => setActiveMenu(null)}>
+            الأساتذة <ChevronDown size={14} />
             {activeMenu === 'teachers' && (
-              <ul className="dropdown-menu">
-                <li><Link to="/teachers/math">الرياضيات</Link></li>
-                <li><Link to="/teachers/physics">الفيزياء</Link></li>
-                <li><Link to="/teachers/chemistry">الكيمياء</Link></li>
-                <li><Link to="/teachers/biology">الأحياء</Link></li>
-                <li><Link to="/teachers/arabic">اللغة العربية</Link></li>
-              </ul>
+              <div className="nav-dropdown">
+                <Link to="/teachers/math">الرياضيات</Link>
+                <Link to="/teachers/physics">الفيزياء</Link>
+                <Link to="/teachers/chemistry">الكيمياء</Link>
+                <Link to="/teachers/biology">الأحياء</Link>
+                <Link to="/teachers/arabic">اللغة العربية</Link>
+              </div>
             )}
           </div>
 
-          <div className="nav-link py-6">
-            الدورات
-          </div>
-          
-          {/* Campaigns Dropdown */}
-          <div 
-            className="nav-link py-6"
-            onMouseEnter={() => handleMenuHover('campaigns')}
-          >
-            الكامبينات <ChevronDown size={16} />
-            {activeMenu === 'campaigns' && (
-              <ul className="dropdown-menu">
-                <li><Link to="/campaigns/current">العروض الحالية</Link></li>
-                <li><Link to="/campaigns/sales">التخفيضات</Link></li>
-                <li><Link to="/campaigns/competitions">المسابقات</Link></li>
-                <li><Link to="/campaigns/prizes">الجوائز</Link></li>
-              </ul>
-            )}
-          </div>
+          <div className="nav-item">الدورات</div>
+          <div className="nav-item">الكامبينات</div>
 
-          {/* Contact Us Dropdown */}
-          <div 
-            className="nav-link py-6"
-            onMouseEnter={() => handleMenuHover('contact')}
-          >
-            اتصل بنا <ChevronDown size={16} />
+          <div className="nav-item" onMouseEnter={() => setActiveMenu('contact')} onMouseLeave={() => setActiveMenu(null)}>
+            اتصل بنا <ChevronDown size={14} />
             {activeMenu === 'contact' && (
-              <ul className="dropdown-menu">
-                <li><Link to="/contact/support">الدعم الفني</Link></li>
-                <li><Link to="/contact/sales">المبيعات والتسجيل</Link></li>
-                <li><Link to="/contact/branches">فروعنا</Link></li>
-              </ul>
+              <div className="nav-dropdown">
+                <Link to="/contact/support">الدعم الفني</Link>
+                <Link to="/contact/sales">المبيعات والتسجيل</Link>
+                <Link to="/contact/branches">فروعنا</Link>
+              </div>
             )}
           </div>
-
-          <Link to="/pos" className="nav-link py-6">نقاط البيع</Link>
         </nav>
 
-        {/* Actions */}
         <div className="header-actions">
-          <button className="btn-text" style={{ color: 'inherit' }} aria-label="بحث">
-            <Search size={20} />
+          <button className="btn-icon-circle" aria-label="بحث">
+            <Search size={18} />
           </button>
-          
-          {/* Language Switcher instead of Login */}
-          <Button 
-            variant={isScrolled || activeMenu ? 'outline' : 'primary'} 
-            icon={<Globe size={18} />}
-            onClick={toggleLanguage}
-          >
+          <button className="btn-pill btn-pill-primary" onClick={() => setLang(lang === 'AR' ? 'EN' : 'AR')}>
+            <Globe size={16} />
             {lang === 'AR' ? 'EN' : 'عربي'}
-          </Button>
-
-          <button className="btn-text" style={{ color: 'inherit', display: 'block' }}>
-            <Menu size={24} className="lg:hidden" />
+          </button>
+          <button className="btn-icon-circle" onClick={() => setMobileOpen(!mobileOpen)} style={{ display: 'none' }}>
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>

@@ -1,92 +1,87 @@
-import React from 'react';
-import { FadeIn, StaggerContainer, StaggerItem } from '../components/MotionWrapper';
-import { BookOpen, Laptop, Milestone, Compass } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 const Departments = () => {
-  const departments = [
-    {
-      age: '9 - 15 سنة',
-      duration: 'دورة مستمرة',
-      title: 'الثالث متوسط',
-      desc: 'محاضرات تفاعلية تغطي الرياضيات، الفيزياء، الكيمياء، والأحياء بأسلوب تبسيطي ممتاز.',
-      colorClass: 'program-card-blue',
-      icon: <BookOpen size={28} className="text-white" />
-    },
-    {
-      age: '15 - 18 سنة',
-      duration: 'دورة متكاملة',
-      title: 'السادس الإعدادي',
-      desc: 'باقات السادس العلمي والأدبي الشاملة مع جدول مراجعات واختبارات دورية مكثفة.',
-      colorClass: 'program-card-orange',
-      icon: <Milestone size={28} className="text-white" />
-    },
-    {
-      age: 'خريجي الإعدادية',
-      duration: '8 أشهر',
-      title: 'الذكاء الاصطناعي',
-      desc: 'بناء وبرمجة نماذج الذكاء الاصطناعي، الشبكات العصبية، والتعلم الآلي بلغة Python.',
-      colorClass: 'program-card-green',
-      icon: <Laptop size={28} className="text-white" />
-    },
-    {
-      age: 'الطلاب والشباب',
-      duration: '12 شهر',
-      title: 'علوم البرمجيات',
-      desc: 'تطوير مواقع الويب والبرامج من الصفر وحتى الاحتراف مع تطبيقات عملية.',
-      colorClass: 'program-card-purple',
-      icon: <Compass size={28} className="text-white" />
-    }
+  const [activeTab, setActiveTab] = useState(0);
+  const trackRef = useRef(null);
+  
+  const tabs = ['المراحل الدراسية', 'التخصصات', 'التطوير المهني', 'اللغات'];
+  
+  const courses = [
+    { title: 'باقة الثالث متوسط الشاملة', tag: 'الثالث متوسط', price: '75,000 د.ع', image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80' },
+    { title: 'السادس الإعدادي العلمي', tag: 'السادس العلمي', price: '95,000 د.ع', image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400&q=80' },
+    { title: 'دورة الرياضيات المتقدمة', tag: 'رياضيات', price: '45,000 د.ع', image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=400&q=80' },
+    { title: 'دورة الفيزياء التفاعلية', tag: 'فيزياء', price: '50,000 د.ع', image: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&w=400&q=80' },
+    { title: 'أساسيات الكيمياء الحديثة', tag: 'كيمياء', price: '40,000 د.ع', image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80' },
+    { title: 'دورة الأحياء المتكاملة', tag: 'أحياء', price: '42,000 د.ع', image: 'https://images.unsplash.com/photo-1530026405186-ed1f139313bb?auto=format&fit=crop&w=400&q=80' },
   ];
 
+  const scroll = (dir) => {
+    if (trackRef.current) {
+      trackRef.current.scrollBy({ left: dir * 300, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="section bg-surface border-y border-gray-100">
-      <div className="container">
-        
-        <FadeIn>
-          <div className="text-center mb-16">
-            <span className="text-secondary font-bold mb-2 block text-sm uppercase tracking-wider">برامجنا الأكاديمية</span>
-            <h2 className="section-title">اختر القسم المناسب لك</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
-              نوفر باقات تعليمية متخصصة ومصممة بعناية لتناسب كل مرحلة دراسية وتطور مهاراتك.
-            </p>
+    <>
+      {/* Tabs */}
+      <section className="tabs-section">
+        <div className="container">
+          <div className="tabs-row">
+            {tabs.map((tab, i) => (
+              <button key={i} className={`tab-btn ${i === activeTab ? 'active' : ''}`} onClick={() => setActiveTab(i)}>
+                {tab}
+              </button>
+            ))}
           </div>
-        </FadeIn>
+        </div>
+      </section>
 
-        {/* 4-Column Responsive Grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {departments.map((dept, index) => (
-            <StaggerItem key={index}>
-              <div className={`program-card ${dept.colorClass}`}>
-                
-                {/* Header Tag */}
-                <div className="program-card-header">
-                  <span className="program-card-tag">{dept.age}</span>
-                  <span className="program-card-tag opacity-80">{dept.duration}</span>
+      {/* Carousel */}
+      <section className="carousel-section">
+        <div className="container">
+          <div className="carousel-header">
+            <div>
+              <span className="section-label">تصفح الدورات</span>
+              <h2 className="section-title">الأقسام والتخصصات</h2>
+            </div>
+            <div className="carousel-arrows">
+              <button onClick={() => scroll(1)}><ChevronRight size={20} /></button>
+              <button onClick={() => scroll(-1)}><ChevronLeft size={20} /></button>
+            </div>
+          </div>
+
+          <div className="carousel-track" ref={trackRef}>
+            {courses.map((course, i) => (
+              <motion.div 
+                key={i} 
+                className="course-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="course-card-img">
+                  <img src={course.image} alt={course.title} />
                 </div>
-
-                {/* Description Body */}
-                <div className="my-6">
-                  <h3 className="text-2xl font-black text-white mb-3">{dept.title}</h3>
-                  <p className="text-white/80 text-sm leading-relaxed line-clamp-3">{dept.desc}</p>
+                <div className="course-card-body">
+                  <span className="course-card-tag">{course.tag}</span>
+                  <h3 className="course-card-title">{course.title}</h3>
+                  <span className="course-card-price">{course.price}</span>
                 </div>
+              </motion.div>
+            ))}
+          </div>
 
-                {/* Bottom CTA & Icon */}
-                <div className="flex flex-col gap-4">
-                  <div className="program-card-icon-wrapper">
-                    {dept.icon}
-                  </div>
-                  <button className="program-card-btn">
-                    استكشف التفاصيل
-                  </button>
-                </div>
-
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-
-      </div>
-    </section>
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <button className="btn-pill btn-pill-outline">
+              عرض الجميع
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
