@@ -1,6 +1,14 @@
 import React from 'react';
 import Header from '../sections/Header';
 import Hero from '../sections/Hero';
+import StoryCards from '../sections/StoryCards';
+import Stats from '../sections/Stats';
+import WhyMirmaz from '../sections/WhyMirmaz';
+import Campaigns from '../sections/Campaigns';
+import EducationalMap from '../sections/EducationalMap';
+import Departments from '../sections/Departments';
+import Teachers from '../sections/Teachers';
+import Footer from '../sections/Footer';
 
 const Home = () => {
   return (
@@ -8,14 +16,15 @@ const Home = () => {
       <Header />
       <main>
         <Hero />
-        {/* Placeholder for next sections */}
-        <section className="section section-bg-light" style={{ minHeight: '50vh' }}>
-          <div className="container">
-            <h2 className="section-title text-center">من هي مرماز؟</h2>
-            <p className="text-center text-muted">جاري العمل على هذا القسم...</p>
-          </div>
-        </section>
+        <StoryCards />
+        <Stats />
+        <Campaigns />
+        <WhyMirmaz />
+        <EducationalMap />
+        <Departments />
+        <Teachers />
       </main>
+      <Footer />
     </div>
   );
 };
