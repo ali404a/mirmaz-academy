@@ -6,6 +6,7 @@ import { Star, ChevronRight, ChevronLeft, ArrowLeft } from 'lucide-react';
 const Teachers = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // Increased mock teachers array to 8
   const teachers = [
     {
       id: 1,
@@ -42,15 +43,51 @@ const Teachers = () => {
       students: '5K+ طالب',
       rating: 4.7,
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    },
+    {
+      id: 5,
+      name: 'أ. مصطفى العراقي',
+      subject: 'اللغة الإنجليزية',
+      exp: '14 سنة خبرة',
+      students: '12K+ طالب',
+      rating: 4.9,
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    },
+    {
+      id: 6,
+      name: 'أ. زينب خليل',
+      subject: 'اللغة العربية',
+      exp: '20 سنة خبرة',
+      students: '20K+ طالب',
+      rating: 5.0,
+      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    },
+    {
+      id: 7,
+      name: 'أ. أحمد جاسم',
+      subject: 'التاريخ',
+      exp: '9 سنوات خبرة',
+      students: '4K+ طالب',
+      rating: 4.6,
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    },
+    {
+      id: 8,
+      name: 'م. ليلى شاكر',
+      subject: 'الاقتصاد',
+      exp: '11 سنة خبرة',
+      students: '6K+ طالب',
+      rating: 4.8,
+      image: 'https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
     }
   ];
 
   const nextSlide = () => {
-    setActiveIndex((prev) => (prev === teachers.length - 1 ? 0 : prev + 1));
+    setActiveIndex((prev) => (prev >= teachers.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setActiveIndex((prev) => (prev === 0 ? teachers.length - 1 : prev - 1));
+    setActiveIndex((prev) => (prev <= 0 ? teachers.length - 1 : prev - 1));
   };
 
   return (
@@ -75,12 +112,13 @@ const Teachers = () => {
         </FadeIn>
 
         <div className="overflow-hidden">
+          {/* We apply a calc to show 1 item on mobile, 2 on tablet, 3-4 on desktop by controlling width via CSS */}
           <div 
             className="slider-track"
             style={{ transform: `translateX(${activeIndex * 100}%)` }}
           >
             {teachers.map((teacher) => (
-              <div key={teacher.id} className="teacher-item">
+              <div key={teacher.id} className="teacher-item min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                 <div className="premium-teacher-card">
                   
                   {/* Circular Avatar wrapper */}

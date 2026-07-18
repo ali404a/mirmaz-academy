@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, User, Menu, ChevronDown, BookOpen, MonitorPlay, Users, Award } from 'lucide-react';
+import { Search, Menu, ChevronDown, BookOpen, MonitorPlay, Globe } from 'lucide-react';
 import Button from '../components/Button';
 import logoBlue from '../assets/logo_blue.png';
 import logoWhite from '../assets/logo_white.png';
@@ -8,6 +8,7 @@ import logoWhite from '../assets/logo_white.png';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [lang, setLang] = useState('AR'); // Arabic default
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,23 +26,27 @@ const Header = () => {
     setActiveMenu(null);
   };
 
+  const toggleLanguage = () => {
+    setLang(lang === 'AR' ? 'EN' : 'AR');
+  };
+
   return (
     <header className={`header ${isScrolled || activeMenu ? 'solid' : 'transparent'}`} onMouseLeave={handleMenuLeave}>
       <div className="container header-container">
         
-        {/* Logo Image (Increased height for better legibility) */}
+        {/* Logo Image (Increased height drastically as requested) */}
         <Link to="/" className="header-logo">
           <img 
             src={isScrolled || activeMenu ? logoBlue : logoWhite} 
             alt="مرماز أكاديمي" 
-            style={{ height: '58px', objectFit: 'contain' }}
+            style={{ height: '75px', objectFit: 'contain' }}
           />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="header-nav relative h-full">
           <Link to="/" className="nav-link py-6">الرئيسية</Link>
-          <Link to="/experience" className="nav-link py-6">عن مرماز</Link>
+          <Link to="/about" className="nav-link py-6">من نحن</Link>
           
           {/* Departments Mega Menu */}
           <div 
@@ -111,6 +116,21 @@ const Header = () => {
             )}
           </div>
 
+          {/* Contact Us Dropdown */}
+          <div 
+            className="nav-link py-6"
+            onMouseEnter={() => handleMenuHover('contact')}
+          >
+            اتصل بنا <ChevronDown size={16} />
+            {activeMenu === 'contact' && (
+              <ul className="dropdown-menu">
+                <li><Link to="/contact/support">الدعم الفني</Link></li>
+                <li><Link to="/contact/sales">المبيعات والتسجيل</Link></li>
+                <li><Link to="/contact/branches">فروعنا</Link></li>
+              </ul>
+            )}
+          </div>
+
           <Link to="/pos" className="nav-link py-6">نقاط البيع</Link>
         </nav>
 
@@ -119,9 +139,16 @@ const Header = () => {
           <button className="btn-text" style={{ color: 'inherit' }} aria-label="بحث">
             <Search size={20} />
           </button>
-          <Button variant={isScrolled || activeMenu ? 'primary' : 'outline'} icon={<User size={18} />}>
-            تسجيل الدخول
+          
+          {/* Language Switcher instead of Login */}
+          <Button 
+            variant={isScrolled || activeMenu ? 'outline' : 'primary'} 
+            icon={<Globe size={18} />}
+            onClick={toggleLanguage}
+          >
+            {lang === 'AR' ? 'EN' : 'عربي'}
           </Button>
+
           <button className="btn-text" style={{ color: 'inherit', display: 'block' }}>
             <Menu size={24} className="lg:hidden" />
           </button>
