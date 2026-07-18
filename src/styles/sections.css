@@ -24,7 +24,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Fix browser defaults for Header Buttons to avoid borders */
 .header button {
   background: transparent !important;
   border: none !important;
@@ -374,6 +373,114 @@
   }
 }
 
+/* PREMIUM STEP CARD LAYOUT (Template 1 Inspired) */
+.step-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  transition: var(--transition-normal);
+  position: relative;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-badge {
+  background-color: var(--color-primary-glow);
+  color: var(--color-primary-dark);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* NEW PREMIUM PROGRAM CARD (Template 1 inspired) */
+.program-card {
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.program-card-blue {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+.program-card-orange {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+}
+
+.program-card-green {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+}
+
+.program-card-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.program-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.program-card-tag {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.program-card-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.program-card-btn {
+  background-color: var(--color-white);
+  color: var(--color-text-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  text-align: center;
+  font-size: 0.9rem;
+  transition: var(--transition-fast);
+}
+
+.program-card-btn:hover {
+  background-color: #ffd25d;
+  color: var(--color-text-dark);
+}
 
 /* PREMIUM BLUE FOOTER STYLING */
 .premium-footer {
