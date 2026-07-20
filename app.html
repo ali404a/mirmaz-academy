@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مرماز أكاديمي — أكبر منصة تعليمية في العراق</title>
+<title>التطبيق — مرماز أكاديمي</title>
 <meta name="description" content="مرماز أكاديمي — منظومة تعليمية وطنية رائدة. نبني رحلة تعليمية متكاملة يقودها نخبة أساتذة العراق عبر تجربة رقمية حديثة.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -201,10 +201,10 @@ h1,h2,h3{line-height:1.15;font-weight:700;letter-spacing:-.01em}
 
     <nav class="nav">
       <div class="nav-item"><a class="nav-link" href="#">الرئيسية</a></div>
-      <div class="nav-item"><a class="nav-link" href="about.html">من نحن</a></div>
+      <div class="nav-item"><a class="nav-link" href="#about">من نحن</a></div>
 
       <div class="nav-item">
-        <a class="nav-link" href="sections.html">الأقسام
+        <a class="nav-link" href="#sections">الأقسام
           <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <div class="mega wide">
@@ -228,7 +228,7 @@ h1,h2,h3{line-height:1.15;font-weight:700;letter-spacing:-.01em}
       </div>
 
       <div class="nav-item">
-        <a class="nav-link" href="teachers.html">الأساتذة
+        <a class="nav-link" href="#teachers">الأساتذة
           <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <div class="mega">
@@ -243,12 +243,12 @@ h1,h2,h3{line-height:1.15;font-weight:700;letter-spacing:-.01em}
           </div>
           <div class="mega-feature">
             <div><h4>نخبة أساتذة العراق</h4><p>+150 أستاذ متخصص في منظومة واحدة</p></div>
-            <a class="btn" href="teachers.html">شاهد الكل</a>
+            <a class="btn" href="#teachers">شاهد الكل</a>
           </div>
         </div>
       </div>
 
-      <div class="nav-item"><a class="nav-link" href="courses.html">الدورات
+      <div class="nav-item"><a class="nav-link" href="#sections-grid">الدورات
         <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="mega">
           <div class="mega-grid">
@@ -261,10 +261,10 @@ h1,h2,h3{line-height:1.15;font-weight:700;letter-spacing:-.01em}
         </div>
       </div>
 
-      <div class="nav-item"><a class="nav-link" href="offers.html">العروض</a></div>
-      <div class="nav-item"><a class="nav-link" href="pos.html">نقاط البيع</a></div>
-      <div class="nav-item"><a class="nav-link" href="news.html">الأخبار</a></div>
-      <div class="nav-item"><a class="nav-link" href="contact.html">تواصل معنا</a></div>
+      <div class="nav-item"><a class="nav-link" href="#campaigns">العروض</a></div>
+      <div class="nav-item"><a class="nav-link" href="#pos">نقاط البيع</a></div>
+      <div class="nav-item"><a class="nav-link" href="#news">الأخبار</a></div>
+      <div class="nav-item"><a class="nav-link" href="#contact">تواصل معنا</a></div>
     </nav>
 
     <div class="header-cta">
@@ -275,456 +275,121 @@ h1,h2,h3{line-height:1.15;font-weight:700;letter-spacing:-.01em}
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="hero-bg">
+
+<!-- ============ FULL SCREEN HERO ============ -->
+<section class="app-sec" style="min-height: 90vh; display: flex; align-items: center; padding-top: 120px;">
+  <div class="app-bg">
     <div class="hero-grid"></div>
-    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   </div>
-  <div class="wrap hero-inner">
-    <div class="hero-copy">
-      <span class="eyebrow hero-eyebrow reveal"><span class="dot"></span>منظومة تعليمية وطنية رائدة</span>
-      <h1 class="reveal d1">مستقبل التعليم<br>يبدأ من <span class="accent">مرماز</span>.</h1>
-      <p class="hero-sub reveal d2">نحن في مرماز لا نقدّم دروساً فقط، بل نبني رحلة تعليمية متكاملة يقودها نخبة أساتذة العراق عبر تجربة رقمية حديثة.</p>
-      <div class="hero-actions reveal d3">
-        <a href="#sections-grid" class="btn btn-primary">ابدأ التعلم
-          <svg viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="#sections" class="btn btn-ghost">استكشف الأقسام</a>
-      </div>
-      <div class="hero-trust reveal d4">
-        <div class="ht"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6 6.6.6-5 4.3 1.5 6.5L12 20l-6 3.4 1.5-6.5-5-4.3 6.6-.6L12 2z" fill="#ffb27a"/></svg>تقييم 4.9 من الطلبة</div>
-        <div class="ht"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#ffb27a" stroke-width="2"/><path d="M8 12l2.5 2.5L16 9" stroke="#ffb27a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>معتمدة في 18 محافظة</div>
-      </div>
-    </div>
-
-    <div class="hero-visual reveal d2">
-      <div class="hero-scene">
-        <svg class="scene-illu" viewBox="0 0 400 400" fill="none" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="sg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".9"/><stop offset="1" stop-color="#dfe5ff" stop-opacity=".7"/></linearGradient>
-            <linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#ff6700"/></linearGradient>
-          </defs>
-          <!-- floating shapes -->
-          <circle cx="70" cy="80" r="26" fill="#ffffff" opacity=".12"/>
-          <rect x="300" y="60" width="46" height="46" rx="12" fill="#ffffff" opacity=".1" transform="rotate(18 323 83)"/>
-          <!-- desk -->
-          <rect x="70" y="300" width="260" height="14" rx="7" fill="#ffffff" opacity=".25"/>
-          <!-- laptop -->
-          <g transform="translate(96 214)">
-            <rect x="0" y="0" width="118" height="76" rx="9" fill="url(#sg1)"/>
-            <rect x="10" y="10" width="98" height="56" rx="4" fill="#2b43dc"/>
-            <path d="M6 30h30M6 40h44M6 50h22" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7" transform="translate(10 8)"/>
-            <rect x="-10" y="76" width="138" height="9" rx="4" fill="#c9d2ff"/>
-          </g>
-          <!-- tablet -->
-          <g transform="translate(232 196) rotate(-8)">
-            <rect x="0" y="0" width="78" height="104" rx="12" fill="url(#sg1)"/>
-            <rect x="9" y="9" width="60" height="86" rx="6" fill="#eef1ff"/>
-            <circle cx="39" cy="40" r="15" fill="none" stroke="#ff6700" stroke-width="4"/>
-            <path d="M20 66h38M20 76h26" stroke="#2b43dc" stroke-width="3.5" stroke-linecap="round" opacity=".6"/>
-          </g>
-          <!-- student head (abstract) -->
-          <g transform="translate(150 120)">
-            <circle cx="0" cy="0" r="34" fill="#ffd9b8"/>
-            <path d="M-34 -6a34 34 0 0168 0v-6a34 34 0 00-68 0z" fill="#161616"/>
-            <path d="M-40 -12l40-20 40 20-8 5-32-14-32 14z" fill="#2b43dc"/>
-            <rect x="-6" y="-40" width="12" height="14" rx="3" fill="#ff6700"/>
-            <circle cx="-12" cy="4" r="3.5" fill="#161616"/><circle cx="12" cy="4" r="3.5" fill="#161616"/>
-            <path d="M-10 18q10 8 20 0" stroke="#161616" stroke-width="3" stroke-linecap="round" fill="none"/>
-          </g>
-        </svg>
-      </div>
-      <div class="fcard f1"><span class="fi" style="background:var(--primary)"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8l8-4 8 4-8 4-8-4z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 10v4c0 1.7 2.2 3 5 3s5-1.3 5-3v-4" stroke="#fff" stroke-width="1.8"/></svg></span><div><b>120,000+</b><span>طالب وطالبة</span></div></div>
-      <div class="fcard f2"><span class="fi" style="background:var(--secondary)"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#fff" stroke-width="1.8"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><b>150+</b><span>أستاذ متخصص</span></div></div>
-      <div class="fcard f3"><span class="fi" style="background:#4d63ff"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.3-7-11a7 7 0 0114 0c0 5.7-7 11-7 11z" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" fill="#fff"/></svg></span><div><b>18</b><span>محافظة عراقية</span></div></div>
-      <div class="fcard f4"><span class="fi" style="background:#161616"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h11l3 3v13H5V4z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 11h7M8 15h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><b>700+</b><span>دورة تعليمية</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PARTNERS STRIP ============ -->
-<section class="partners">
-  <div class="wrap">
-    <p class="partners-label reveal">موثوقة من قبل المؤسسات والجهات الرائدة في العراق</p>
-    <div class="partners-row reveal d1">
-      <span class="plogo"><svg viewBox="0 0 120 40" fill="none"><rect x="6" y="10" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2"/><path d="M34 14h60M34 22h44M34 30h30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-      <span class="plogo"><svg viewBox="0 0 120 40" fill="none"><circle cx="18" cy="20" r="11" stroke="currentColor" stroke-width="2.4"/><path d="M40 12l10 16 10-16M66 12v16M66 12h8a4 4 0 010 8h-8M84 28V12h6a8 8 0 010 16h-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="plogo"><svg viewBox="0 0 120 40" fill="none"><path d="M8 28l8-16 8 16M11 22h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 12v16M34 12h20M34 20h14M60 28V12l8 16 8-16v16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="plogo"><svg viewBox="0 0 120 40" fill="none"><rect x="8" y="10" width="18" height="20" rx="9" stroke="currentColor" stroke-width="2.4"/><path d="M40 28V12h6a5 5 0 010 10h-6M58 12v16M58 12h10M58 20h8M78 12v16h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="plogo"><svg viewBox="0 0 120 40" fill="none"><path d="M18 8l10 6v12l-10 6-10-6V14l10-6z" stroke="currentColor" stroke-width="2.2"/><path d="M42 28V12h12M42 20h9M60 12v16M60 12h8a4 4 0 010 8h-8M82 28l6-16 6 16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="plogo"><svg viewBox="0 0 120 40" fill="none"><path d="M8 20a10 10 0 1010-10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="20" r="3" fill="currentColor"/><path d="M40 12v16M40 12h9M40 20h7M56 28V12h10M56 20h8M74 12v16h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHO IS MIRMAZ ============ -->
-<section class="section who" id="about">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>من هي مرماز؟</span>
-      <h2>قصّة منصّة غيّرت طريقة تعلّم العراق</h2>
-      <p>لم نبدأ كمتجر لبيع الدورات، بل كرؤية لبناء منظومة تعليمية وطنية متكاملة يثق بها الطالب وولي الأمر.</p>
-    </div>
-    <div class="who-grid">
-      <article class="who-card reveal d1">
-        <span class="wc-ic" style="--c:var(--primary)"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.9"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="1.9"/></svg></span>
-        <h3>رؤيتنا</h3>
-        <p>أن نجعل التعليم النوعي حقاً متاحاً لكل طالب عراقي، أينما كان، عبر تجربة رقمية بمعايير عالمية.</p>
-      </article>
-      <article class="who-card reveal d2">
-        <span class="wc-ic" style="--c:var(--secondary)"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6l16 6-16 6 3-6-3-6z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span>
-        <h3>رسالتنا</h3>
-        <p>توحيد نخبة أساتذة العراق وأفضل المحتوى التعليمي داخل منظومة واحدة تقود الطالب من المرحلة الابتدائية حتى الجامعة.</p>
-      </article>
-      <article class="who-card reveal d3">
-        <span class="wc-ic" style="--c:#4d63ff"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6 6.6.6-5 4.3 1.5 6.5L12 20l-6 3.4 1.5-6.5-5-4.3 6.6-.6L12 2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
-        <h3>لماذا مرماز؟</h3>
-        <p>لأننا لا نبيع محتوى، بل نبني رحلة: متابعة، اختبارات ذكية، دعم مستمر، وتطبيقات تجعل التعلّم عادة يومية.</p>
-      </article>
-      <article class="who-card reveal d4">
-        <span class="wc-ic" style="--c:#0ea672"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V9l8-5 8 5v11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 20l6-6 4 3 6-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h3>رحلة النجاح</h3>
-        <p>من فكرة صغيرة إلى أكبر منصة تعليمية في العراق — رحلة بنيناها خطوة بخطوة مع كل طالب.</p>
-      </article>
-    </div>
-
-    <div class="timeline reveal d2">
-      <div class="tl-line"></div>
-      <div class="tl-item"><span class="tl-dot"></span><b>البداية</b><span>تأسيس الفكرة وأول مجموعة أساتذة</span></div>
-      <div class="tl-item"><span class="tl-dot"></span><b>التوسّع</b><span>إطلاق المنصة الرقمية والتطبيقات</span></div>
-      <div class="tl-item"><span class="tl-dot"></span><b>الانتشار</b><span>الوصول إلى 18 محافظة عراقية</span></div>
-      <div class="tl-item"><span class="tl-dot on"></span><b>اليوم</b><span>أكبر منظومة تعليمية في العراق</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BY NUMBERS ============ -->
-<section class="section stats-sec">
-  <div class="stats-bg"><div class="hero-grid"></div></div>
-  <div class="wrap">
-    <div class="sec-head reveal" style="color:#fff">
-      <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff"><span class="dot"></span>مرماز بالأرقام</span>
-      <h2 style="color:#fff">أرقام تتحدث عن الثقة</h2>
-    </div>
-    <div class="stats-grid">
-      <div class="stat reveal d1"><b class="count" data-to="120000" data-suffix="+">0</b><span>طالب وطالبة</span></div>
-      <div class="stat reveal d2"><b class="count" data-to="150" data-suffix="+">0</b><span>أستاذ متخصص</span></div>
-      <div class="stat reveal d3"><b class="count" data-to="18">0</b><span>محافظة عراقية</span></div>
-      <div class="stat reveal d4"><b class="count" data-to="700" data-suffix="+">0</b><span>دورة تعليمية</span></div>
-      <div class="stat reveal d2"><b class="count" data-to="95" data-suffix="%">0</b><span>رضا الطلبة</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ OFFERS & COMMUNITY CAMPAIGNS ============ -->
-<section class="section offers-sec" id="campaigns">
-  <div class="wrap">
-    <div class="sec-head-row reveal">
-      <div>
-        <span class="eyebrow orange"><span class="dot"></span>العروض والحملات المجتمعية</span>
-        <h2 class="rh">عروض تفيدك ومبادرات تخدم مجتمعك</h2>
-      </div>
-      <div class="slider-nav">
-        <button class="sbtn" id="camPrev" aria-label="السابق"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="sbtn" id="camNext" aria-label="التالي"><svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      </div>
-    </div>
-    <p class="offers-note reveal">لا نكتفي بتقديم العروض، بل نطلق حملات مجتمعية تدعم الطلبة وتردّ الجميل لمجتمعنا العراقي.</p>
-
-    <div class="offers-layout">
-      <!-- featured community campaign -->
-      <article class="comm-card reveal d1">
-        <span class="comm-badge">حملة مجتمعية</span>
-        <div class="comm-ic">
-          <svg viewBox="0 0 48 48" fill="none"><path d="M24 40s-13-8.4-13-19a9 9 0 0116.5-5A9 9 0 0137 21c0 10.6-13 19-13 19z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/><path d="M20 20h8M24 16v8" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
-        </div>
-        <h3>تعليم بلا حدود</h3>
-        <p>مقاعد دراسية مجانية للطلبة الأكثر حاجة في كل محافظة — لأن التعليم حق للجميع.</p>
-        <div class="comm-stat">
-          <div><b>3,500+</b><span>مقعد مجاني</span></div>
-          <div><b>18</b><span>محافظة</span></div>
-        </div>
-        <a href="#" class="comm-btn">ساهم أو رشّح طالباً</a>
-      </article>
-
-      <!-- offers + community slider -->
-      <div class="slider reveal d2" id="camSlider">
-        <article class="cam-card"><div class="cam-media" style="--g1:#2b43dc;--g2:#4d63ff"><span class="cam-tag">عرض حالي</span><svg class="cam-illu" viewBox="0 0 100 60"><circle cx="78" cy="14" r="10" fill="#fff" opacity=".2"/><path d="M14 46l14-20 12 14 10-16 16 22" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div><div class="cam-body"><h3>خصم الموسم الدراسي</h3><p>حتى 40% على باقات الأقسام العلمية والأدبية لفترة محدودة.</p><a href="#" class="cam-link">التفاصيل<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
-        <article class="cam-card"><div class="cam-media" style="--g1:#0ea672;--g2:#22c58b"><span class="cam-tag">مبادرة مجتمعية</span><svg class="cam-illu" viewBox="0 0 100 60"><path d="M50 44s-11-7-11-15a7 7 0 0113-3.5A7 7 0 0161 29c0 8-11 15-11 15z" fill="#fff" opacity=".9"/></svg></div><div class="cam-body"><h3>سلة العلم الرمضانية</h3><p>حملة سنوية تمنح اشتراكات مجانية للعوائل المتعففة خلال رمضان.</p><a href="#" class="cam-link">التفاصيل<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
-        <article class="cam-card"><div class="cam-media" style="--g1:#ff6700;--g2:#ff8a3d"><span class="cam-tag">دعم الطلبة</span><svg class="cam-illu" viewBox="0 0 100 60"><circle cx="50" cy="24" r="9" stroke="#fff" stroke-width="2.5"/><path d="M34 46c0-9 7-14 16-14s16 5 16 14" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="cam-body"><h3>منحة المتفوّقين</h3><p>منح دراسية كاملة للطلبة الأوائل في الامتحانات الوزارية كل عام.</p><a href="#" class="cam-link">التفاصيل<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
-        <article class="cam-card"><div class="cam-media" style="--g1:#7b3ff2;--g2:#a56bff"><span class="cam-tag">عرض محدود</span><svg class="cam-illu" viewBox="0 0 100 60"><rect x="30" y="16" width="40" height="28" rx="4" fill="#fff" opacity=".9"/><path d="M40 30l6 6 12-14" stroke="#7b3ff2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="cam-body"><h3>باقتان بسعر واحدة</h3><p>اشترك بقسم واحصل على القسم الثاني بنصف السعر هذا الأسبوع.</p><a href="#" class="cam-link">التفاصيل<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ AD CAMPAIGNS ARCHIVE ============ -->
-<section class="section adcamp-sec" id="ad-campaigns">
-  <div class="wrap">
-    <div class="sec-head-row reveal">
-      <div>
-        <span class="eyebrow"><span class="dot"></span>الحملات الإعلانية</span>
-        <h2 class="rh">مسيرة مرماز عبر حملاتها</h2>
-      </div>
-      <div class="adcamp-filters" id="adFilters">
-        <button class="adf active" data-f="all">الكل</button>
-        <button class="adf" data-f="brand">هوية</button>
-        <button class="adf" data-f="season">موسمية</button>
-        <button class="adf" data-f="launch">إطلاق</button>
-      </div>
-    </div>
-    <p class="adcamp-note reveal">كل حملة أطلقتها مرماز عبر الوقت — الفكرة، الهدف، والأثر. سجلّ يوثّق نمو العلامة التجارية.</p>
-    <div class="adcamp-grid reveal d1" id="adGrid"></div>
-  </div>
-</section>
-
-<!-- ============ WHY MIRMAZ (big cards) ============ -->
-<section class="section why-sec">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>لماذا مرماز؟</span>
-      <h2>منظومة متكاملة، وليست مجرد دورات</h2>
-      <p>كل ما يحتاجه الطالب للنجاح في مكان واحد، مبني بمعايير احترافية.</p>
-    </div>
-    <div class="why-grid">
-      <article class="why-card big reveal d1">
-        <span class="why-ic" style="--c:var(--primary)"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="13" rx="2.5" stroke="currentColor" stroke-width="1.9"/><path d="M10 9l5 3-5 3V9z" fill="currentColor"/><path d="M8 21h8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
-        <h3>تعليم مباشر</h3>
-        <p>بثوث حيّة تفاعلية مع نخبة الأساتذة، تشعر فيها وكأنك داخل القاعة تماماً.</p>
-      </article>
-      <article class="why-card reveal d2">
-        <span class="why-ic" style="--c:var(--secondary)"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11l2 2 4-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.9"/></svg></span>
-        <h3>اختبارات ذكية</h3>
-        <p>تقييم مستمر يكشف نقاط ضعفك ويقترح خطة تحسين مخصّصة لك.</p>
-      </article>
-      <article class="why-card reveal d3">
-        <span class="why-ic" style="--c:#4d63ff"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="8" width="10" height="9" rx="2.5" stroke="currentColor" stroke-width="1.9"/><path d="M12 4v4M9 12h.01M15 12h.01M4 12h3M17 12h3" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
-        <h3>ذكاء اصطناعي</h3>
-        <p>مساعد تعليمي يجيب على أسئلتك ويشرح لك أي فكرة في أي وقت.</p>
-      </article>
-      <article class="why-card reveal d1">
-        <span class="why-ic" style="--c:#0ea672"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z" stroke="currentColor" stroke-width="1.9"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h3>متابعة مستمرة</h3>
-        <p>تقارير أداء دورية للطالب وولي الأمر تُبقيك على المسار الصحيح.</p>
-      </article>
-      <article class="why-card reveal d2">
-        <span class="why-ic" style="--c:var(--primary)"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="3" width="10" height="18" rx="3" stroke="currentColor" stroke-width="1.9"/><path d="M11 18h2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
-        <h3>تطبيقات ذكية</h3>
-        <p>تعلّم من هاتفك في أي وقت ومكان، مع مزامنة كاملة عبر أجهزتك.</p>
-      </article>
-      <article class="why-card big reveal d3">
-        <span class="why-ic" style="--c:var(--secondary)"><svg viewBox="0 0 24 24" fill="none"><path d="M18 8a4 4 0 00-8 0M6 12h.01M12 21a4 4 0 004-4v-1M8 12a4 4 0 004-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M4 16a4 4 0 004 4h.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="19" cy="15" r="2.5" stroke="currentColor" stroke-width="1.9"/></svg></span>
-        <h3>دعم فني على مدار الساعة</h3>
-        <p>فريق دعم عراقي يرافقك في كل خطوة، من التسجيل حتى النجاح، عبر كل قنوات التواصل.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ EDUCATIONAL MAP ============ -->
-<section class="section map-sec" id="sections">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>الخريطة التعليمية</span>
-      <h2>رحلتك الكاملة داخل مرماز</h2>
-      <p>من أول خطوة في المدرسة إلى إتقان مهارات المستقبل — كل مرحلة تقودك للتي بعدها.</p>
-    </div>
-    <div class="eduroad reveal d1">
-      <a class="road-node" href="#"><span class="rn-num">01</span><span class="rn-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8l8-4 8 4-8 4-8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><b>المرحلة الابتدائية</b><span class="rn-sub">الأساس المتين</span></a>
-      <span class="road-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <a class="road-node" href="#"><span class="rn-num">02</span><span class="rn-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 4h12v16H6z" stroke="currentColor" stroke-width="1.8"/><path d="M9 9h6M9 13h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><b>المتوسطة</b><span class="rn-sub">بناء المهارات</span></a>
-      <span class="road-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <a class="road-node" href="#"><span class="rn-num">03</span><span class="rn-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 10v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5" stroke="currentColor" stroke-width="1.8"/></svg></span><b>الإعدادية</b><span class="rn-sub">نحو الجامعة</span></a>
-      <span class="road-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <a class="road-node" href="#"><span class="rn-num">04</span><span class="rn-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V9l8-5 8 5v11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-5h6v5" stroke="currentColor" stroke-width="1.8"/></svg></span><b>الجامعات</b><span class="rn-sub">التخصص الدقيق</span></a>
-      <span class="road-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <a class="road-node accent" href="#"><span class="rn-num">05</span><span class="rn-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5 5.6.6-4 4 1 5.4L12 20l-5 3 1-5.4-4-4 5.6-.6L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><b>الدورات الاحترافية</b><span class="rn-sub">مهارات المستقبل</span></a>
-      <span class="road-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <a class="road-node accent" href="#"><span class="rn-num">06</span><span class="rn-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="8" width="10" height="9" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 4v4M4 12h3M17 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><b>الذكاء الاصطناعي</b><span class="rn-sub">قيادة الغد</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SECTIONS GRID ============ -->
-<section class="section" id="sections-grid">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>أقسام مرماز</span>
-      <h2>اختر قسمك وابدأ الآن</h2>
-    </div>
-    <div class="sgrid">
-      <article class="scard reveal d1"><span class="sc-ic" style="--c:var(--primary)"><svg viewBox="0 0 24 24" fill="none"><path d="M5 5h14v14H5z" stroke="currentColor" stroke-width="1.9"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><h3>القسم العلمي</h3><div class="sc-meta"><span>210 دورة</span><span>48 أستاذ</span></div><a href="#" class="sc-btn">استكشف<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
-      <article class="scard reveal d2"><span class="sc-ic" style="--c:var(--secondary)"><svg viewBox="0 0 24 24" fill="none"><path d="M6 4h9l3 3v13H6V4z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M9 11h6M9 15h4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><h3>القسم الأدبي</h3><div class="sc-meta"><span>140 دورة</span><span>32 أستاذ</span></div><a href="#" class="sc-btn">استكشف<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
-      <article class="scard reveal d3"><span class="sc-ic" style="--c:#4d63ff"><svg viewBox="0 0 24 24" fill="none"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 5l-2 14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>البرمجة</h3><div class="sc-meta"><span>95 دورة</span><span>18 أستاذ</span></div><a href="#" class="sc-btn">استكشف<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
-      <article class="scard reveal d1"><span class="sc-ic" style="--c:#0ea672"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="8" width="10" height="9" rx="2.5" stroke="currentColor" stroke-width="1.9"/><path d="M12 4v4M4 12h3M17 12h3" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><h3>الذكاء الاصطناعي</h3><div class="sc-meta"><span>60 دورة</span><span>12 أستاذ</span></div><a href="#" class="sc-btn">استكشف<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
-      <article class="scard reveal d2"><span class="sc-ic" style="--c:var(--primary)"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 12h17M12 3.5c2.5 2.3 2.5 14.7 0 17M12 3.5C9.5 5.8 9.5 18.2 12 20.5" stroke="currentColor" stroke-width="1.6"/></svg></span><h3>اللغة الإنجليزية</h3><div class="sc-meta"><span>80 دورة</span><span>15 أستاذ</span></div><a href="#" class="sc-btn">استكشف<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
-      <article class="scard reveal d3"><span class="sc-ic" style="--c:var(--secondary)"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4c3 0 5 2 5 4.5 0 1.6-.8 2.6-1.6 3.4C14.4 13 14 13.7 14 15v1h-4v-1c0-1.3-.4-2-1.4-3.1C7.8 11.1 7 10.1 7 8.5 7 6 9 4 12 4z" stroke="currentColor" stroke-width="1.8"/><path d="M10 20h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><h3>التخصصات الطبية</h3><div class="sc-meta"><span>70 دورة</span><span>20 أستاذ</span></div><a href="#" class="sc-btn">استكشف<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TEACHERS ============ -->
-<section class="section teachers-sec" id="teachers">
-  <div class="wrap">
-    <div class="sec-head-row reveal">
-      <div>
-        <span class="eyebrow"><span class="dot"></span>نخبة الأساتذة</span>
-        <h2 class="rh">من يقود رحلتك التعليمية</h2>
-      </div>
-      <div class="slider-nav">
-        <button class="sbtn" id="tPrev" aria-label="السابق"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="sbtn" id="tNext" aria-label="التالي"><svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      </div>
-    </div>
-    <p class="teachers-note reveal">الأساتذة جزء من منظومة مرماز — نختارهم بعناية ليقدّموا لك أفضل تجربة تعليمية.</p>
-    <div class="slider reveal d1" id="tSlider">
-      <!-- teacher cards injected by JS -->
-    </div>
-  </div>
-</section>
-
-<!-- ============ NEWS ============ -->
-<section class="section news-sec" id="news">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>أخبار مرماز</span>
-      <h2>آخر ما يحدث في المنصة</h2>
-    </div>
-    <div class="news-grid">
-      <article class="news-card feat reveal d1"><div class="news-media" style="--g1:#2b43dc;--g2:#4d63ff"><span class="news-cat">نتائج</span></div><div class="news-body"><span class="news-date">تحديث حديث</span><h3>طلبة مرماز يحقّقون أعلى المعدلات في الامتحانات الوزارية</h3><p>نتائج استثنائية تؤكد أثر المنظومة التعليمية على مستوى الطلبة في مختلف المحافظات.</p><a href="#" class="cam-link">اقرأ المزيد<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
-      <article class="news-card reveal d2"><div class="news-media sm" style="--g1:#ff6700;--g2:#ff8a3d"><span class="news-cat">إعلان</span></div><div class="news-body"><span class="news-date">هذا الأسبوع</span><h3>افتتاح أقسام جديدة للذكاء الاصطناعي والبرمجة</h3><a href="#" class="cam-link">اقرأ المزيد<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
-      <article class="news-card reveal d3"><div class="news-media sm" style="--g1:#0ea672;--g2:#22c58b"><span class="news-cat">مؤتمر</span></div><div class="news-body"><span class="news-date">قريباً</span><h3>مؤتمر مرماز التعليمي السنوي بحضور نخبة الأساتذة</h3><a href="#" class="cam-link">اقرأ المزيد<svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<section class="section testi-sec">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow orange"><span class="dot"></span>آراء الطلبة</span>
-      <h2>قصص نجاح حقيقية</h2>
-    </div>
-    <div class="testi-grid">
-      <article class="vtesti reveal d1"><div class="vt-thumb" style="--g1:#2b43dc;--g2:#4d63ff"><button class="vt-play" aria-label="تشغيل"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5l12 7-12 7V5z" fill="currentColor"/></svg></button></div><div class="vt-body"><p>"غيّرت مرماز طريقة دراستي بالكامل، صرت أفهم بدل ما أحفظ."</p><div class="vt-who"><b>سارة م.</b><span>السادس العلمي</span></div></div></article>
-      <article class="vtesti reveal d2"><div class="vt-thumb" style="--g1:#ff6700;--g2:#ff8a3d"><button class="vt-play" aria-label="تشغيل"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5l12 7-12 7V5z" fill="currentColor"/></svg></button></div><div class="vt-body"><p>"الأساتذة والمتابعة المستمرة رفعوا معدّلي بشكل ما توقعته."</p><div class="vt-who"><b>أحمد ك.</b><span>الثالث متوسط</span></div></div></article>
-      <article class="vtesti reveal d3"><div class="vt-thumb" style="--g1:#0ea672;--g2:#22c58b"><button class="vt-play" aria-label="تشغيل"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5l12 7-12 7V5z" fill="currentColor"/></svg></button></div><div class="vt-body"><p>"أدرس من أي محافظة وبأي وقت، التطبيق سهّل عليّ كل شيء."</p><div class="vt-who"><b>ليان ع.</b><span>طالبة جامعية</span></div></div></article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ APP ============ -->
-<section class="section app-sec" id="app">
-  <div class="app-bg"><div class="hero-grid"></div></div>
   <div class="wrap app-inner">
-    <div class="app-copy reveal">
-      <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff"><span class="dot"></span>تطبيق مرماز</span>
-      <h2 style="color:#fff">مرماز كامل في جيبك</h2>
-      <p class="app-sub">تعلّم، تابع اختباراتك، واحضر البثوث المباشرة من هاتفك في أي وقت ومكان.</p>
-      <div class="store-row">
-        <a href="#" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 2c-1.3.1-2.8.9-3.7 2-1 .9-1.8 2.5-1.5 4 1.5.1 3-.8 3.9-1.9.9-1 1.6-2.6 1.3-4.1zM20.5 17c-.6 1.3-.9 1.9-1.6 3-1 1.6-2.5 3.5-4.3 3.5-1.6 0-2-1-4.2-1s-2.6 1-4.2 1c-1.8 0-3.2-1.8-4.2-3.3C-.5 16.7-.9 11 1.6 8.2 2.7 6.9 4.4 6 6 6c1.7 0 2.7 1 4.1 1 1.3 0 2.1-1 4.1-1 1.4 0 2.9.8 4 2.1-3.5 1.9-2.9 6.9.3 8.8z"/></svg><span><small>حمّل من</small>App Store</span></a>
-        <a href="#" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3c-.4.2-.6.6-.6 1.2v17c0 .6.2 1 .6 1.2l9.2-9.7L3.6 2.3zM14 11.3l3-3.2-9.3-5.3c-.4-.2-.8-.2-1 0L14 11.3zm0 1.4l-7.3 8.5c.3.2.7.2 1 0l9.3-5.3-3-3.2zM17.7 9.3l-3.2 3.4 3.2 3.4 2.7-1.6c.7-.4.7-1.4 0-1.8l-2.7-1.4z"/></svg><span><small>حمّل من</small>Google Play</span></a>
+    <div class="app-copy">
+      <div class="eyebrow orange" style="margin-bottom: 20px;">
+        <i class="dot"></i>
+        <span data-en="New Release">إصدار جديد</span>
       </div>
+      <h2 style="font-size: clamp(38px, 5vw, 58px); color: #fff; line-height: 1.1; margin-bottom: 20px;" data-en="Learn anywhere, anytime">تعلم في أي مكان وفي أي وقت</h2>
+      <p class="app-sub" style="font-size: 19px; max-width: 500px;" data-en="Download the Mirmaz Academy app to access all your courses, track your progress, and join live classes directly from your smartphone.">حمل تطبيق مرماز أكاديمي للوصول إلى جميع دوراتك، وتتبع تقدمك، والانضمام إلى المحاضرات المباشرة مباشرة من هاتفك الذكي.</p>
+      
+      <div class="store-row" style="margin-top: 40px;">
+        <a href="#" class="store-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.04 2.26-.74 3.58-.8 2.6-.2 4.1 1.25 4.8 2.37-3.9 2.1-3.24 6.82.72 8.36-.61 1.54-1.39 3.09-2.58 4.3v-.02l-1.6.02v-.02a5.53 5.53 0 0 1 0-.04v.04c-.03-.02-.05-.04-.07-.06l.07.06zm-4.73-13.62C12.18 4.29 13.9 2.5 13.65 0c-2.31.25-4.27 1.83-4.88 4.33 2.5.35 4.27-1.57 3.55-4.32z"/></svg>
+          <span><small data-en="Download on the">حمل من</small>App Store</span>
+        </a>
+        <a href="#" class="store-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 2.22C3.23 2.6 3 3.19 3 3.93v16.14c0 .74.23 1.33.61 1.71l.06.06L12.6 12.9v-.26L3.67 3.71l-.06.06v-1.55z"/><path d="M18.66 16.5l-4.52-4.51v-.47l4.52-4.51.08.05 5.34 3.04c1.52.87 1.52 2.28 0 3.15l-5.34 3.04-.08.05z"/><path d="M3.67 22.05l9.45-9.44 5.55 5.55-15 8.53z"/><path d="M3.67 2.51L18.67 11l-5.55 5.55L3.67 7.11 3.67 2.51z"/></svg>
+          <span><small data-en="Get it on">احصل عليه من</small>Google Play</span>
+        </a>
+      </div>
+
       <div class="qr-row">
-        <div class="qr"><svg viewBox="0 0 40 40" fill="none"><path d="M4 4h10v10H4zM26 4h10v10H26zM4 26h10v10H4z" stroke="#161616" stroke-width="2"/><rect x="7" y="7" width="4" height="4" fill="#161616"/><rect x="29" y="7" width="4" height="4" fill="#161616"/><rect x="7" y="29" width="4" height="4" fill="#161616"/><path d="M26 26h4v4h-4zM32 26h4M26 32h4v4M32 32h4v4" stroke="#161616" stroke-width="2"/></svg></div>
-        <span>امسح الكود<br>للتحميل السريع</span>
+        <div class="qr">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zm2 2v4h4V5zM13 3h8v8h-8zm2 2v4h4V5zM3 13h8v8H3zm2 2v4h4v-4zm13-2h-2v2h2zm-2 2h-2v2h2zm2 2h-2v2h2zm-2 2h-2v2h2zm-2-6h-2v2h2zm0 4h-2v2h2zm4 0h-2v2h2z"/></svg>
+        </div>
+        <div>
+          <b data-en="Scan QR Code" style="display: block;">امسح الرمز</b>
+          <span data-en="To download the app directly">لتحميل التطبيق مباشرة</span>
+        </div>
       </div>
     </div>
-    <div class="app-visual reveal d2">
+    
+    <div class="app-visual">
       <div class="phone">
         <div class="phone-notch"></div>
         <div class="phone-screen">
-          <div class="ps-top"><span class="ps-logo"></span><span class="ps-bars"><i></i><i></i><i></i></span></div>
-          <div class="ps-hero">مرحباً 👋<br><b>واصل رحلتك</b></div>
-          <div class="ps-card"><span class="psc-ic"></span><div><b>الفيزياء — الفصل 3</b><small>65% مكتمل</small></div></div>
-          <div class="ps-card"><span class="psc-ic o"></span><div><b>بث مباشر الآن</b><small>الرياضيات</small></div></div>
-          <div class="ps-card"><span class="psc-ic g"></span><div><b>اختبار جديد</b><small>الكيمياء</small></div></div>
+          <div class="ps-top">
+            <div class="ps-logo"></div>
+            <div class="ps-bars"><i></i><i></i><i></i></div>
+          </div>
+          <div class="ps-hero">
+            <b data-en="Hello, Ahmed!">مرحباً، أحمد!</b><br>
+            <span data-en="Ready to learn?">مستعد للتعلم اليوم؟</span>
+          </div>
+          <div class="ps-card">
+            <div class="psc-ic"></div>
+            <div>
+              <b data-en="Mathematics">الرياضيات - الفصل الأول</b>
+              <small data-en="Dr. Ali Hassan">د. علي حسن</small>
+            </div>
+          </div>
+          <div class="ps-card">
+            <div class="psc-ic o"></div>
+            <div>
+              <b data-en="Physics">الفيزياء - القوة والحركة</b>
+              <small data-en="Prof. Mohammed">أستاذ محمد</small>
+            </div>
+          </div>
+          <div class="ps-card">
+            <div class="psc-ic g"></div>
+            <div>
+              <b data-en="Chemistry">الكيمياء العضوية</b>
+              <small data-en="Dr. Sara">د. سارة</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ POINTS OF SALE ============ -->
-<section class="section pos-sec" id="pos">
+<!-- ============ APP FEATURES ============ -->
+<section class="section why-sec" style="padding: 80px 0;">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>نقاط البيع</span>
-      <h2>وكلاء مرماز في كل العراق</h2>
-      <p>ابحث عن أقرب نقطة بيع معتمدة في محافظتك واشترك بسهولة.</p>
+    <div class="sec-head">
+      <h2 data-en="App Features">مميزات التطبيق</h2>
+      <p data-en="Everything you need in your pocket.">كل ما تحتاجه للنجاح أصبح في جيبك.</p>
     </div>
-    <div class="pos-layout reveal d1">
-      <div class="pos-panel">
-        <div class="pos-search">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <input type="text" placeholder="ابحث عن محافظة أو منطقة..." aria-label="بحث">
-        </div>
-        <div class="pos-list" id="posList"></div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-ic" style="--c: #2b43dc;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3 data-en="Offline Viewing">مشاهدة بدون إنترنت</h3>
+        <p data-en="Download lessons and watch them anytime without relying on internet connection.">حمل المحاضرات وشاهدها في أي وقت دون الحاجة للاتصال بالإنترنت.</p>
       </div>
-      <div class="pos-map">
-        <svg viewBox="0 0 300 360" class="iraq-map" fill="none">
-          <path d="M150 20l40 10 30 25 15 40-5 45 25 30-10 40-35 25-30 30-45 5-40-25-20-40 10-45-15-40 20-45 35-25 45-15z"
-            fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2.5" stroke-linejoin="round"/>
-          <g class="map-pins">
-            <circle class="pin" cx="160" cy="130" r="7"/><circle class="pin" cx="120" cy="180" r="7"/>
-            <circle class="pin" cx="185" cy="200" r="7"/><circle class="pin" cx="145" cy="235" r="7"/>
-            <circle class="pin" cx="200" cy="260" r="7"/><circle class="pin" cx="110" cy="120" r="7"/>
-            <circle class="pin big" cx="155" cy="185" r="9"/>
-          </g>
-        </svg>
-        <span class="pos-hint"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.3-7-11a7 7 0 0114 0c0 5.7-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>اضغط على أي نقطة لعرض الوكلاء</span>
+      <div class="why-card">
+        <div class="why-ic" style="--c: #ff6700;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3 data-en="Study Reminders">تنبيهات ذكية</h3>
+        <p data-en="Get notified about live sessions, new materials, and exam dates automatically.">احصل على إشعارات فورية عن مواعيد المحاضرات المباشرة والمواد الجديدة.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="section faq-sec">
-  <div class="wrap faq-wrap">
-    <div class="sec-head reveal" style="text-align:right;margin:0 0 8px">
-      <span class="eyebrow"><span class="dot"></span>الأسئلة الشائعة</span>
-      <h2 style="font-size:clamp(26px,3.5vw,38px)">إجابات على أكثر ما يُسأل</h2>
-    </div>
-    <div class="faq-list reveal d1">
-      <details class="faq"><summary>كيف أشترك في مرماز أكاديمي؟<span class="faq-x"></span></summary><div class="faq-a">يمكنك الاشتراك مباشرة عبر الموقع أو التطبيق باختيار القسم المناسب، أو عبر أقرب نقطة بيع معتمدة في محافظتك.</div></details>
-      <details class="faq"><summary>هل الدروس مباشرة أم مسجّلة؟<span class="faq-x"></span></summary><div class="faq-a">توفّر مرماز الاثنين معاً: بثوث مباشرة تفاعلية مع الأساتذة، ومكتبة دروس مسجّلة تعود إليها في أي وقت.</div></details>
-      <details class="faq"><summary>هل يمكن لولي الأمر متابعة الطالب؟<span class="faq-x"></span></summary><div class="faq-a">نعم، يحصل ولي الأمر على تقارير أداء دورية ومتابعة مستمرة لمستوى الطالب وتقدّمه.</div></details>
-      <details class="faq"><summary>في أي المحافظات تتوفّر مرماز؟<span class="faq-x"></span></summary><div class="faq-a">مرماز متوفّرة في 18 محافظة عراقية عبر شبكة واسعة من الوكلاء ونقاط البيع المعتمدة.</div></details>
-      <details class="faq"><summary>ما الفرق بين مرماز والمنصات الأخرى؟<span class="faq-x"></span></summary><div class="faq-a">مرماز ليست متجراً للدورات، بل منظومة متكاملة: أساتذة، اختبارات ذكية، متابعة، ذكاء اصطناعي ودعم، كلها في مكان واحد.</div></details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="section contact-sec" id="contact">
-  <div class="wrap contact-grid">
-    <div class="contact-copy reveal">
-      <span class="eyebrow"><span class="dot"></span>تواصل معنا</span>
-      <h2>نحن هنا لمساعدتك</h2>
-      <p>فريق مرماز جاهز للإجابة على استفساراتك عبر أي قناة تفضّلها.</p>
-      <div class="contact-channels">
-        <a href="#" class="cch"><span class="cch-ic" style="--c:#25d366"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 00-.7.3c-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7 1.8 2.8 4.4 3.9c1.6.7 2.2.7 3 .6.5 0 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1z"/></svg></span><span>واتساب<small>رد فوري</small></span></a>
-        <a href="#" class="cch"><span class="cch-ic" style="--c:#0088cc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 3L2 10.5l6 2 2.5 7 3-4 5 3.5L22 3zm-4 4L9 13"/></svg></span><span>تيليغرام<small>@mirmaz</small></span></a>
-        <a href="#" class="cch"><span class="cch-ic" style="--c:var(--primary)"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.8"/><path d="M4 6l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>البريد<small>info@mirmaz.iq</small></span></a>
-        <a href="#" class="cch"><span class="cch-ic" style="--c:var(--secondary)"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span>الهاتف<small>اتصل بنا</small></span></a>
+      <div class="why-card">
+        <div class="why-ic" style="--c: #0ea672;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M6 20V10M18 20V4"/></svg></div>
+        <h3 data-en="Progress Tracking">متابعة الأداء</h3>
+        <p data-en="Track your study hours, exam scores, and overall progress with detailed analytics.">تتبع ساعات دراستك ودرجات امتحاناتك مع إحصائيات دقيقة وشاملة.</p>
       </div>
-      <div class="social-row">
-        <a href="#" class="soc" aria-label="فيسبوك"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l.5-3.5H13V8.3c0-1 .3-1.7 1.8-1.7H17V3.5c-.3 0-1.5-.1-2.8-.1C11.4 3.4 10 5 10 8v2.5H7V14h3v8h3z"/></svg></a>
-        <a href="#" class="soc" aria-label="انستغرام"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.9"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
-        <a href="#" class="soc" aria-label="تيك توك"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.3 1.7 3.9 4 4.2v3c-1.5 0-2.9-.4-4-1.2v6.5A6.5 6.5 0 119.5 9v3.1a3.4 3.4 0 103.4 3.4V3H16z"/></svg></a>
-        <a href="#" class="soc" aria-label="يوتيوب"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 00-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 002 8.2 31 31 0 002 12a31 31 0 00.1 3.8 3 3 0 002.1 2.1c1.9.6 7.8.6 7.8.6s6 0 7.9-.6a3 3 0 002.1-2.1A31 31 0 0022 12a31 31 0 00-.1-3.8zM10 15V9l5 3-5 3z"/></svg></a>
+      <div class="why-card">
+        <div class="why-ic" style="--c: #8a2be2;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3 data-en="Instant Support">دعم فوري</h3>
+        <p data-en="Chat directly with technical support or ask your teachers questions easily.">تواصل مباشرة مع الدعم الفني أو اطرح أسئلتك على أساتذتك بكل سهولة.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic" style="--c: #e91e63;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3 data-en="Secure Environment">بيئة آمنة</h3>
+        <p data-en="Your data and account are protected with the highest security standards.">بياناتك وحسابك محميان بأعلى معايير الأمان والتشفير.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic" style="--c: #00bcd4;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <h3 data-en="Interactive Quizzes">اختبارات تفاعلية</h3>
+        <p data-en="Test your knowledge with quick quizzes after each lesson.">اختبر معلوماتك من خلال اختبارات سريعة وتفاعلية بعد كل درس.</p>
       </div>
     </div>
-    <form class="contact-form reveal d1" onsubmit="return false">
-      <div class="cf-field"><label>الاسم الكامل</label><input type="text" placeholder="اكتب اسمك"></div>
-      <div class="cf-row">
-        <div class="cf-field"><label>رقم الهاتف</label><input type="tel" placeholder="07XX XXX XXXX"></div>
-        <div class="cf-field"><label>المحافظة</label><input type="text" placeholder="محافظتك"></div>
-      </div>
-      <div class="cf-field"><label>رسالتك</label><textarea rows="4" placeholder="كيف يمكننا مساعدتك؟"></textarea></div>
-      <button class="btn btn-primary cf-submit">إرسال الرسالة
-        <svg viewBox="0 0 24 24" fill="none"><path d="M4 12l16-7-7 16-2-7-7-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
-    </form>
   </div>
 </section>
 
@@ -741,10 +406,10 @@ h1,h2,h3{line-height:1.15;font-weight:700;letter-spacing:-.01em}
         </div>
       </div>
       <div class="footer-cols">
-        <div class="fcol"><h4>مرماز</h4><a href="about.html">من نحن</a><a href="about.html">تجربة مرماز</a><a href="news.html">الأخبار</a><a href="about.html#careers">الوظائف</a></div>
-        <div class="fcol"><h4>التعليم</h4><a href="courses.html">الدورات</a><a href="teachers.html">الأساتذة</a><a href="sections.html">الأقسام</a><a href="offers.html">العروض</a></div>
-        <div class="fcol"><h4>الدعم</h4><a href="contact.html">تواصل معنا</a><a href="pos.html">نقاط البيع</a><a href="app.html">التطبيق</a><a href="news.html">المدونة</a></div>
-        <div class="fcol"><h4>قانوني</h4><a href="terms.html">الشروط والأحكام</a><a href="privacy.html">سياسة الخصوصية</a><a href="support.html">الدعم الفني</a></div>
+        <div class="fcol"><h4>مرماز</h4><a href="#about">من نحن</a><a href="#">تجربة مرماز</a><a href="#news">الأخبار</a><a href="#">الوظائف</a></div>
+        <div class="fcol"><h4>التعليم</h4><a href="#sections-grid">الدورات</a><a href="#teachers">الأساتذة</a><a href="#sections">الأقسام</a><a href="#campaigns">العروض</a></div>
+        <div class="fcol"><h4>الدعم</h4><a href="#contact">تواصل معنا</a><a href="#pos">نقاط البيع</a><a href="#app">التطبيق</a><a href="#">المدونة</a></div>
+        <div class="fcol"><h4>قانوني</h4><a href="#">الشروط والأحكام</a><a href="#">سياسة الخصوصية</a><a href="#">الدعم الفني</a></div>
       </div>
     </div>
     <div class="footer-bottom">
