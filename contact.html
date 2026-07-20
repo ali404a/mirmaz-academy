@@ -469,6 +469,7 @@ document.querySelectorAll('.count').forEach(el=>countIO.observe(el));
 // slider nav helper
 function bindSlider(sliderId,prevId,nextId){
   const s=document.getElementById(sliderId);
+  if(!s) return;
   const step=()=> (s.querySelector('*')?.offsetWidth||300)+22;
   document.getElementById(nextId).onclick=()=>s.scrollBy({left:-step()*1.2,behavior:'smooth'});
   document.getElementById(prevId).onclick=()=>s.scrollBy({left:step()*1.2,behavior:'smooth'});
@@ -483,7 +484,7 @@ const teachers=[
   {n:'أ. حسن علي',s:'الإنكليزي',y:'10 سنوات',st:'6.9k',r:'4.8',g1:'#1e30a8',g2:'#3a52ff'},
 ];
 const avatar=`<svg class="tc-avatar" viewBox="0 0 130 150" fill="none"><ellipse cx="65" cy="150" rx="55" ry="45" fill="#fff" opacity=".92"/><circle cx="65" cy="70" r="34" fill="#ffd9b8"/><path d="M31 64a34 34 0 0168 0v-8a34 34 0 00-68 0z" fill="#161616"/><circle cx="53" cy="72" r="3.5" fill="#161616"/><circle cx="77" cy="72" r="3.5" fill="#161616"/><path d="M56 86q9 7 18 0" stroke="#161616" stroke-width="3" stroke-linecap="round" fill="none"/></svg>`;
-document.getElementById('tSlider').innerHTML=teachers.map(t=>`
+if(document.getElementById('tSlider')) document.getElementById('tSlider').innerHTML=teachers.map(t=>`
   <article class="tcard">
     <div class="tc-photo" style="--g1:${t.g1};--g2:${t.g2}"><span class="tc-badge">أستاذ معتمد</span>${avatar}</div>
     <div class="tc-body">
@@ -505,10 +506,10 @@ const provs=[
 ];
 const pinIc=`<svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.3-7-11a7 7 0 0114 0c0 5.7-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>`;
 const posList=document.getElementById('posList');
-const renderPos=(arr)=>posList.innerHTML=arr.map(p=>`
-  <div class="pos-item"><span class="pi-ic">${pinIc}</span><div><b>${p.n}</b><span>وكلاء ونقاط بيع معتمدة</span></div><span class="pi-count">${p.c}</span></div>`).join('');
+const renderPos=(arr)=>{ if(posList) posList.innerHTML=arr.map(p=>`
+  <div class="pos-item"><span class="pi-ic">${pinIc}</span><div><b>${p.n}</b><span>وكلاء ونقاط بيع معتمدة</span></div><span class="pi-count">${p.c}</span></div>`).join(''); };
 renderPos(provs);
-document.querySelector('.pos-search input').addEventListener('input',e=>{
+if(document.querySelector('.pos-search input')) document.querySelector('.pos-search input').addEventListener('input',e=>{
   const q=e.target.value.trim();
   renderPos(provs.filter(p=>p.n.includes(q)));
   if(SITE_EN) translateTree(document.getElementById('posList'), true);
@@ -562,7 +563,7 @@ const adCampaigns=[
 ];
 const adGrid=document.getElementById('adGrid');
 function renderAd(list){
-  adGrid.innerHTML=list.map(c=>`
+  if(adGrid) adGrid.innerHTML=list.map(c=>`
     <article class="adc-card" data-f="${c.f}">
       <div class="adc-media" style="--g1:${c.g1};--g2:${c.g2}">
         <span class="adc-year">${c.y}</span>${c.ic}<span class="adc-type">${c.type}</span>
@@ -576,7 +577,7 @@ function renderAd(list){
     </article>`).join('');
 }
 renderAd(adCampaigns);
-document.getElementById('adFilters').addEventListener('click',e=>{
+if(document.getElementById('adFilters')) document.getElementById('adFilters').addEventListener('click',e=>{
   const btn=e.target.closest('.adf');if(!btn)return;
   document.querySelectorAll('.adf').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
