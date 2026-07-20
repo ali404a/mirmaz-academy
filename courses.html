@@ -975,6 +975,14 @@ function translateTree(root, toEN){
     const dict= toEN?I18N:I18N_REV; const k=el.getAttribute('placeholder').trim();
     if(dict[k]!==undefined) el.setAttribute('placeholder',dict[k]);
   });
+
+  // data-en support for subpages
+  root.querySelectorAll('[data-en]').forEach(el=>{
+    if(el.dataset.ar === undefined) {
+      el.dataset.ar = el.innerHTML;
+    }
+    el.innerHTML = toEN ? el.dataset.en : el.dataset.ar;
+  });
 }
 function applyLanguage(toEN){
   SITE_EN = toEN;
